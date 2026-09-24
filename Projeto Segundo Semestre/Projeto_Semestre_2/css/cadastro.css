@@ -1,0 +1,213 @@
+body{
+    background-image: url(../Notícias/Imagens/corrupcao.png);
+    background-size: cover;
+}
+
+.termos{
+    width: 185px;
+    padding-top: 10px;
+    padding-right: 3px;
+    padding-left: 3px;
+    margin-right: none;
+    margin-left: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: relative;
+    top: 160px;
+}
+
+a{
+    color: #4d0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover{
+    color: white;
+}
+
+.container{
+    background-color: white;
+    margin: auto;
+    border: none;
+    padding: none;
+    border-radius: 15px;
+    width: 90%;
+    height: 20%;
+    box-shadow: 0 0 10px red;
+
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+}
+
+#formulario{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: end;
+    column-gap: 40px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    flex: 1;
+}
+
+.lado-esquerdo,
+.lado-direito{
+    display: block;
+}
+
+label{
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+input,
+select{
+    width: 200px;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    background: white;
+    box-shadow:
+    0 0 5px rgba(255,0,0,0.4),
+    0 0 15px rgba(255,0,0,0.2),
+    0 0 25px rgba(255,0,0,0.1);
+}
+
+button{
+    display: block;
+    width: 500px;
+    padding: 13px;
+    margin-top: 15px;
+    background: linear-gradient(to right, #ff4d4d, #cc0000);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.botoes{
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.abacate{
+    background: linear-gradient(to top, #ff4d4d, #cc0000);
+    width: 100%;
+    flex: 1.5;
+    align-self: stretch;
+    margin: 0;
+    border: none;
+    border-radius: 15px 0px 0px 15px;
+
+    color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px){
+
+    .container{
+        flex-direction: column;
+    }
+
+    .abacate{
+        border-radius: 15px 15px 0 0;
+        padding-bottom: 40px;
+    }
+
+    #formulario{
+        grid-template-columns: auto;
+        justify-content: center;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .botoes{
+        grid-column: span 1;
+    }
+
+    input,
+    select{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button{
+        width: 100%;
+    }
+
+    .termos{
+        top: 20px;
+    }
+
+}
+
+.btn-home {
+    position: fixed;
+    top: 15px;
+    left: 15px; /* importante: pra não ficar em cima do botão do menu */
+
+    z-index: 1001;
+    background-color: #bf0000;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.btn-home i {
+    color: rgb(24, 2, 2);
+    font-size: 25px;
+}
+
+#mensagem-geral {
+    display: none;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mensagem-erro {
+    display: block !important;
+    background-color: #ffe5e5;
+    color: #b30000;
+    border: 1px solid #b30000;
+}
+
+.mensagem-sucesso {
+    display: block !important;
+    background-color: #e6ffe6;
+    color: #006600;
+    border: 1px solid #006600;
+}
+
+#erro-cpf, #erro-senha, #erro-cep, #erro-celular, #erro-telefone {
+    display: block;
+    color: #cc0000;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 15px;
+}
