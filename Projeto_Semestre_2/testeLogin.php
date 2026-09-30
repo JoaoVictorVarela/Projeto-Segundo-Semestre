@@ -26,12 +26,9 @@ else{
     $_SESSION['email'] = $email;
     $_SESSION['senha'] = $senha;
     print_r("Usuário cadastrado");
-    header('Location: paginatop.php');
+    header('Location: laFome.html');
 }
 
-}
-else{
-    header('Location: login.php');
 }
 
 ?>

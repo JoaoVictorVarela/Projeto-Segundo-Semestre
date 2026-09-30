@@ -13,7 +13,6 @@ if (!empty($_GET['search'])){
 
 }
 else{
-    echo "tem coisa ai nao doido";
     $sql = 'SELECT * FROM usuarios ORDER BY id';
 }
 
@@ -22,7 +21,7 @@ $conexao = $con->query($sql);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -32,12 +31,7 @@ $conexao = $con->query($sql);
 </head>
 
 <body>
-    <h1> Se você está lendo isso, significa que você está logado. Parabens!!</h1>
-
-
-
-
-
+   
     <div class="box-search">
 
         <input type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar">
