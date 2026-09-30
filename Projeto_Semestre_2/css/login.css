@@ -1,137 +1,158 @@
-body{
-    background-image: url(../Notícias/Imagens/carmim.png);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+
+* {
     margin: 0;
-}
-
-div{
-    background-color: white;
-    width: 400px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px red;
-}
-
-h1{
-    text-align: center;
-    color: #cc0000;
-    margin-bottom: 40px;
-}
-
-h2{
-    font-size: 18px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-
-input{
-    width: 100%;
-    border: none;
-    padding: 12px;
-    border-radius: 25px;
-    background: white;
+    padding: 0;
     box-sizing: border-box;
-
-    box-shadow:
-    0 0 5px rgba(255,0,0,0.4),
-    0 0 15px rgba(255,0,0,0.2),
-    0 0 25px rgba(255,0,0,0.1);
 }
 
-button{
-    width: 100%;
-    padding: 13px;
-    margin-top: 20px;
-
-    background: linear-gradient(to right, #ff4d4d, #cc0000);
-    color: white;
-
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-}
- 
-button:hover{
-    cursor: pointer;
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.88)),
+        url("https://img.magnific.com/fotos-gratis/vegetais-ajustados-a-esquerda-de-uma-ardosia-preta_1220-685.jpg") center / cover fixed;
 }
 
-p{
+body > div {
+    width: min(430px, 100%);
+    padding: 38px 34px;
+    background: rgba(17, 17, 17, 0.94);
+    border: 1px solid #333;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #d4af37;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 44px;
+    font-style: italic;
+    font-weight: 600;
     text-align: center;
-    margin-top: 25px;
 }
 
-a{
-    color: #4d0000;
+h2 {
+    margin: 20px 0 9px;
+    color: #ddd;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 13px 15px;
+    color: #fff;
+    background: #181818;
+    border: 1px solid #444;
+    border-radius: 0;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.16);
+}
+
+button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px 18px;
+    color: #111;
+    background: #d4af37;
+    border: 1px solid #d4af37;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    color: #d4af37;
+    background: transparent;
+}
+
+#mensagem-geral-login,
+#mensagem-geral {
+    display: block;
+    margin: 15px 0;
+    padding: 10px;
+    color: #ddd;
+    text-align: center;
+}
+
+p {
+    margin-top: 25px;
+    color: #aaa;
+    text-align: center;
+    line-height: 1.6;
+}
+
+a {
+    color: #d4af37;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-a:hover{
-    color: red;
+a:hover {
+    color: #fff;
 }
 
-/* RESPONSIVIDADE */
+.mensagem-erro {
+    display: block !important;
+    color: #ffb3b3 !important;
+    background: #351818;
+    border: 1px solid #a94442;
+}
 
-@media (max-width: 600px){
-
-    div{
-        width: 90%;
-        padding: 25px;
-    }
-
+.mensagem-sucesso {
+    display: block !important;
+    color: #c7e8c7 !important;
+    background: #182c1c;
+    border: 1px solid #4d8c52;
 }
 
 #btn-home {
     position: fixed;
     top: 15px;
-    left: 20px; /* importante: pra não ficar em cima do botão do menu */
-
+    left: 20px;
     z-index: 100;
-    background-color: #bf0000;
-
-    width: 10px;
-    height: 10px;
-
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 5px;
-    cursor: pointer;
-
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    color: #111;
+    background: #d4af37;
+    border-radius: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 #btn-home i {
-    color: rgb(24, 2, 2);
-    font-size: 25px;
+    color: #111;
+    font-size: 20px;
 }
 
-#mensagem-geral {
-    display: none;
-    margin: 15px 0;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-}
+@media (max-width: 600px) {
+    body > div {
+        padding: 30px 22px;
+    }
 
-.mensagem-erro {
-    display: block !important;
-    background-color: #ffe5e5;
-    color: #b30000;
-    border: 1px solid #b30000;
-    text-align: center;
-}
-
-.mensagem-sucesso {
-    display: block !important;
-    background-color: #e6ffe6;
-    color: #006600;
-    border: 1px solid #006600;
-    text-align: center;
+    h1 {
+        font-size: 38px;
+    }
 }

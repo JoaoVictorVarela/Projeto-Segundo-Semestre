@@ -23,7 +23,7 @@
 
         </div>
         <!--O "event" é quando o formulário é enviado-->
-        <form action="banco.php" method="post" id="formulario" onsubmit="cadastrar(event)" novalidate>
+        <form action="inserirBanco.php" method="post" id="formulario" onsubmit="cadastrar(event)" novalidate>
 
             <div class="lado-esquerdo">
 
