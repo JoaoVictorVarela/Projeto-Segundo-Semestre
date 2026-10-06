@@ -17,6 +17,7 @@
         <form action="testeLogin.php" method="post">
             <h2>Email</h2>
             <input name="email" id="loginEmail" type="email" placeholder="Digite seu email" required>
+            
             <h2>Senha</h2>
             <input name="senha" id="loginSenha" type="password" placeholder="Digite sua senha" required>
             <br><br>

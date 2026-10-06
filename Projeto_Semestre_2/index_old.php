@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>  <html lang="pt-BR">  <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>La Fome - Restaurante</title>  
@@ -8,7 +12,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"  
     rel="stylesheet">  
 
-</head>  <body>  <!-- CABEÇALHO -->  
+<link rel="stylesheet" href="css/index.css">
+</head>  
+<body>  <!-- CABEÇALHO -->  
 
 <header>  
 
@@ -26,8 +32,15 @@
 
         <a href="#avaliacoes">Avaliações</a>  
 
-        <a href="#contato">Contato</a>  
+        <a href="#contato">Contato</a> 
+        
+        <a class="login-btn" href="login.php">Login</a>
+        <?php if (isset($_SESSION['email'])): ?>
 
+        <a class="login-btn" href="usuarios.php">Lista de usuarios</a>
+        
+        <a href="sair.php"> Sair </a>
+        <?php endif; ?>
     </nav>  
 
 </header>  
@@ -228,7 +241,7 @@
         <div class="prato">  
 
             <img  
-                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80"  
+                src="https://www.shutterstock.com/image-photo/avocado-shrimp-sandwiches-isolated-on-260nw-2753808263.jpg"  
                 alt="Camarão Especial">  
 
             <div class="prato-info">  
@@ -491,11 +504,10 @@
     </p>  
 
     <a  
-        href="https://wa.me/5521999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20La%20Fome."  
-        target="_blank"  
+        href="reserva.php"  
         class="btn">  
 
-        Reservar pelo WhatsApp  
+        Reservar
 
     </a>  
 
@@ -601,18 +613,7 @@
 
 <!-- JAVASCRIPT -->  
 
-<script>  
-
-    function reservar() {  
-
-        window.open(  
-            "https://wa.me/5521999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20La%20Fome.",  
-            "_blank"  
-        );  
-
-    }  
-
-</script>
+<script src="js/index.js"></script>
 
 </body>  
 </html>

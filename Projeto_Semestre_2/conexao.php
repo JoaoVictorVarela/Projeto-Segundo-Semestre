@@ -1,5 +1,5 @@
 <?php
 
-$con = new mysqli('localhost','root','','clientes');
+$con = new mysqli('localhost','root','','lafome');
 
 ?>
