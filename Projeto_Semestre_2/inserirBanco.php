@@ -38,9 +38,9 @@
 
         // query para inserir os usuários (teste)
         // primeiro fala o nome da tabela e as colunas que quer preencher, depois usa values para disse da onde vem os valores que  vão entrar na tabela(na ordem que esta na tabela)
-        $sql = "INSERT INTO usuarios(nome,data_nascimento,genero,nome_materno,email,cep,endereco,cpf,telefone_celular,telefone_fixo,senha) 
+        $sql = "INSERT INTO usuarios(tipo_usuario,nome,data_nascimento,genero,nome_materno,email,cep,endereco,cpf,telefone_celular,telefone_fixo,senha) 
         
-        values('$nome','$data_nascimento','$genero','$nome_materno','$email','$cep','$endereco','$cpf','$telefone_celular','$telefone_fixo','$senha_cript')";
+        values('comum','$nome','$data_nascimento','$genero','$nome_materno','$email','$cep','$endereco','$cpf','$telefone_celular','$telefone_fixo','$senha_cript')";
 
         $retorno = $con->query($sql);
 

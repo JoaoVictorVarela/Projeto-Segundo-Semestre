@@ -36,6 +36,7 @@ $conexao = $con->query($sql);
     <div class="box-search">
 
         <input type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar">
+        <br>
         
         <!-- Botão de pesquisar !-->
         <button class="btn btn-primary" onclick="searchData()">
@@ -55,6 +56,7 @@ $conexao = $con->query($sql);
   <thead>
     <tr>
       <th scope="col">id</th>
+      <th scope="col">tipo_usuario</th>
       <th scope="col">nome</th>
       <th scope="col">data_nascimento</th>
       <th scope="col">genero</th>
@@ -78,6 +80,7 @@ $conexao = $con->query($sql);
     while($dados_user = mysqli_fetch_assoc($conexao)){
         echo "<tr>";
         echo "<td>" . $dados_user['id'] . "</td>"; 
+        echo "<td>" . $dados_user['tipo_usuario'] . "</td>"; 
         echo "<td>" . $dados_user['nome'] . "</td>"; 
         echo "<td>" . $dados_user['data_nascimento'] . "</td>"; 
         echo "<td>" . $dados_user['genero'] . "</td>"; 
@@ -89,10 +92,11 @@ $conexao = $con->query($sql);
         echo "<td>" . $dados_user['telefone_celular'] . "</td>"; 
         echo "<td>" . $dados_user['telefone_fixo'] . "</td>"; 
         echo "<td>" . $dados_user['senha'] . "</td>"; 
-        // Botão de excluir usuarios
+        // Botão de excluir usuarios (svg é o icone) 
         echo "<td> 
         
         <a class='btn btn-sm btn-danger' href='deletar.php?id=$dados_user[id]'>
+
         <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash3-fill' viewBox='0 0 16 16'>
         <path d='M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5'/>
         </svg>
@@ -107,7 +111,7 @@ $conexao = $con->query($sql);
 </table>
     </div>
 
-    <a href="sair.php"> Sair </a>
+    <a href="index.php"> Home</a>
 </body>
 
 <script src="js/pesquisa.js"></script>

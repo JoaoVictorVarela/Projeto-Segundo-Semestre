@@ -19,7 +19,7 @@ session_start()
 <header>  
 
     <div class="logo">  
-        La Fome  
+        La Fome
     </div>  
 
     <nav>  
@@ -33,13 +33,19 @@ session_start()
         <a href="#avaliacoes">Avaliações</a>  
 
         <a href="#contato">Contato</a> 
-        
+
+        <?php if (!isset($_SESSION['email'])): ?>
+
         <a class="login-btn" href="login.php">Login</a>
+        
+        <?php endif; ?>
+
         <?php if (isset($_SESSION['email'])): ?>
 
         <a class="login-btn" href="usuarios.php">Lista de usuarios</a>
         
         <a href="sair.php"> Sair </a>
+
         <?php endif; ?>
     </nav>  
 

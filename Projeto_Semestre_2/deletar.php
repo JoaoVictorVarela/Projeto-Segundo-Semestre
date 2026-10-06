@@ -16,6 +16,6 @@ if (!empty($_GET['id'])){
     }
 }
 
-header('Location: paginatop.php')
+
 
 ?>
