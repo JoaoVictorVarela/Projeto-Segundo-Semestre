@@ -17,6 +17,7 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
 
         unset($_SESSION['email']);
         unset($_SESSION['senha']);
+        unset($_SESSION['tipo_usuario']);
 
         header('Location: login.php');
         exit();
@@ -30,6 +31,7 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
         if (password_verify($senha, $usuario['senha'])) {
 
             $_SESSION['email'] = $usuario['email'];
+            $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
 
             header('Location: index.php');
             exit();
@@ -38,6 +40,7 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
 
             unset($_SESSION['email']);
             unset($_SESSION['senha']);
+            unset($_SESSION['tipo_usuario']);
 
             header('Location: login.php');
             exit();

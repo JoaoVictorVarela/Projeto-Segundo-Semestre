@@ -39,15 +39,18 @@ session_start()
         <a class="login-btn" href="login.php">Login</a>
         
         <?php endif; ?>
+        
+        <?php if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'admin'): ?>
+        <a class="login-btn" href="usuarios.php">Lista de usuários</a>
+        <?php endif; ?>
 
         <?php if (isset($_SESSION['email'])): ?>
 
-        <a class="login-btn" href="usuarios.php">Lista de usuarios</a>
-        
         <a href="sair.php"> Sair </a>
 
         <?php endif; ?>
     </nav>  
+
 
 </header>  
 

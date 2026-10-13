@@ -3,9 +3,17 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07/10/2026 às 00:19
+-- Tempo de geração: 08/10/2026 às 02:47
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
+
+-- Cria o banco de dados caso ainda não exista
+CREATE DATABASE IF NOT EXISTS `lafome`
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+
+-- Seleciona o banco que receberá as tabelas e os dados
+USE `lafome`;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,8 +69,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `tipo_usuario`, `nome`, `data_nascimento`, `genero`, `nome_materno`, `email`, `cep`, `endereco`, `cpf`, `telefone_celular`, `telefone_fixo`, `senha`) VALUES
-(8, 'comum', 'siricutico da silva', '1980-11-11', 'Masculino', 'siricutica da silva', 'top@g', '76824-468', 'Rua Policial Gusmão, Cuniã - Porto Velho/RO', '855.182.390-68', '(+55)11-11111111', '(+55)11-11111111', '$2y$10$KNPTyXoxjRBCvo6HFuDIiu31XR2xbdwNsePITE6KjIKj9IHdys.0y'),
-(9, 'comum', 'robson da silva', '1980-11-11', 'Masculino', 'robsona da silva', 'a@g', '58074-718', 'Rua Manoel da Silva Monteiro, José Américo de Almeida - João Pessoa', '545.628.830-30', '(+55)22-22222222', '(+55)22-22222222', '$2y$10$bHN7c1dkqsTlsI.q5P/6Devcdhn4MyaAqs85ORAZznrK4j0Si8HVq');
+(1, 'admin', 'usuario  Master', '1980-09-08', 'Masculino', 'Roberta da Silva', 'admin@gmail.com', '83065-340', 'Rua São Bento, Guatupê - São José dos Pinhais/PR', '373.246.140-86', '(+55)11-11111111', '(+55)11-11111111', '$2y$10$NbbhFI8O8dhUiAGmrLWDQusP1eNMz/jFpAbYexVGTEpX3xqf1b6wW'),
+(2, 'comum', 'Pedro Paulo da Silva', '1980-11-11', 'Masculino', 'Paula da Silva', 'pedro@gmail.com', '67010-577', 'Passagem Dez de Julho, Guanabara - Ananindeua/PA', '679.537.560-99', '(+55)11-11111111', '(+55)11-11111111', '$2y$10$Lh7vSlRvW1sOigUiP85urOPQvgiR1Vd2nLZpij2GiYKIrPysA6x/G');
 
 --
 -- Índices para tabelas despejadas
@@ -94,7 +102,7 @@ ALTER TABLE `reservas`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

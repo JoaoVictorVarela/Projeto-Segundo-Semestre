@@ -4,6 +4,8 @@ session_start();
 if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
     unset($_SESSION['email']);
     unset($_SESSION['senha']);
+    unset($_SESSION['tipo_usuario']);
+    
     header('Location: login.php');
 }
 ?>
@@ -16,7 +18,7 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
     <title>Faça sua reserva</title>
 </head>
 <body>
-    <h1>PAGINA ONDE O CLIENTE FARIA RESERVA (EM CONSTRUÇÃO)</h1>
+    <h1>PAGINA ONDE FARIA RESERVA (EM CONSTRUÇÃO)</h1>
     <a href="index.php"> Home</a>
 </body>
 </html>

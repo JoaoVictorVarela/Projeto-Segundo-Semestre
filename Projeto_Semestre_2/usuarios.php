@@ -2,25 +2,31 @@
 include_once("conexao.php");
 session_start();
 
-if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
+
+if (!isset($_SESSION['email']))  {
     unset($_SESSION['email']);
     unset($_SESSION['senha']);
+    unset($_SESSION['tipo_usuario']);
     header('Location: login.php');
+    exit;
 }
 
 if (!empty($_GET['search'])){
     $pesquisa = $_GET['search'];
-    $sql = "SELECT * FROM usuarios WHERE nome LIKE '%$pesquisa%' ORDER BY id";
 
+    $sql = "SELECT * FROM usuarios 
+            WHERE nome LIKE '%$pesquisa%' 
+            AND tipo_usuario != 'admin'
+            ORDER BY id";
 }
 else{
-    $sql = 'SELECT * FROM usuarios ORDER BY id';
+    $sql = "SELECT * FROM usuarios 
+            WHERE tipo_usuario != 'admin'
+            ORDER BY id";
 }
-
 
 $conexao = $con->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
