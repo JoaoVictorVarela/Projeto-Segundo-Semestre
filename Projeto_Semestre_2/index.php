@@ -33,7 +33,12 @@ session_start()
         <a href="#avaliacoes">Avaliações</a>  
 
         <a href="#contato">Contato</a> 
-
+        
+        <?php
+        /*echo '<pre>';
+print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
+echo '</pre>';
+        */?>
         <?php if (!isset($_SESSION['email'])): ?>
 
         <a class="login-btn" href="login.php">Login</a>
@@ -45,9 +50,7 @@ session_start()
         <?php endif; ?>
 
         <?php if (isset($_SESSION['email'])): ?>
-
         <a href="sair.php"> Sair </a>
-
         <?php endif; ?>
     </nav>  
 

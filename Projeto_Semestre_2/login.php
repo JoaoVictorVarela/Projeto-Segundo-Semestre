@@ -28,6 +28,7 @@
         </form>
 
         <p>Não possui login? <a href="cadastro.php">Clique aqui</a>
+        <p>Esqueceu a senha? <a href="esqueciSenha.php">Clique aqui</a>
         </div>
         
         
