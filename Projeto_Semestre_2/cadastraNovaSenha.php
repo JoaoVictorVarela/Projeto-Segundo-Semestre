@@ -3,21 +3,21 @@ include_once('conexao.php');
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
      
-    $email= htmlspecialchars($_POST['email']);
+    $email= htmlspecialchars(trim($_POST['email']));
 
-    $cpf= htmlspecialchars($_POST['cpf']);
+    $cpf= htmlspecialchars(trim($_POST['cpf']));
 
-    $cep= htmlspecialchars($_POST['cep']);
+    $cep= htmlspecialchars(trim($_POST['cep']));
 
-    $data_nascimento= htmlspecialchars($_POST['data_nascimento']);
+    $data_nascimento= htmlspecialchars(trim($_POST['data_nascimento']));
 
-    $nome_materno = htmlspecialchars($_POST['nome_materno']);
+    $nome_materno = htmlspecialchars(trim($_POST['nome_materno']));
 
-    $senha = htmlspecialchars($_POST['senha']);
+    $senha = htmlspecialchars(trim($_POST['senha']));
 
-    $senha_conf = htmlspecialchars($_POST['senha_conf']);
+    $senha_conf = htmlspecialchars(trim($_POST['senha_conf']));
 
-    $sql = "SELECT * FROM usuarios where email = '$email' " ;
+    $sql = "SELECT * FROM usuarios where email = '$email' and tipo_usuario = 'comum' " ;
 
     $resultado = $con->query($sql); 
 
@@ -50,14 +50,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
 
     }
-
-
-
-
-
-
-
-
 
 }
 
