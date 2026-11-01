@@ -34,11 +34,6 @@ session_start()
 
         <a href="#contato">Contato</a> 
         
-        <?php
-        /*echo '<pre>';
-print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
-echo '</pre>';
-        */?>
         <?php if (!isset($_SESSION['email'])): ?>
 
         <a class="login-btn" href="login.php">Login</a>
@@ -46,12 +41,24 @@ echo '</pre>';
         <?php endif; ?>
         
         <?php if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'admin'): ?>
+
         <a class="login-btn" href="usuarios.php">Lista de usuários</a>
+
+        <a class="login-btn" href="pedidos.php">Pedidos</a>
+
         <?php endif; ?>
 
         <?php if (isset($_SESSION['email'])): ?>
+
         <a href="sair.php"> Sair </a>
+
         <?php endif; ?>
+
+       <?php
+       /* echo '<pre>';
+        print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
+        echo '</pre>';
+        */?>
     </nav>  
 
 
@@ -79,7 +86,7 @@ echo '</pre>';
         </a>  
 
         <a href="#contato" class="btn btn-outline">  
-            Reservar Mesa  
+            Faça seu pedido
         </a>  
 
     </div>  
@@ -511,15 +518,15 @@ echo '</pre>';
     </h2>  
 
     <p>  
-        Faça sua reserva e venha viver  
+        Faça um pedido e venha viver  
         uma experiência La Fome.  
     </p>  
 
     <a  
-        href="reserva.php"  
+        href="fazerPedido.php"  
         class="btn">  
 
-        Reservar
+        Faça seu pedido
 
     </a>  
 
