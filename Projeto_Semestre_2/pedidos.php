@@ -106,9 +106,6 @@ $entregues = count($pedidos) - $pendentes;
         <a class="novo-pedido" href="index.php">
             Home
         </a>
-        <a class="novo-pedido" href="fazerpedido.php">
-            + Novo pedido
-        </a>
     </header>
 
     <div class="resumo">

@@ -1,0 +1,184 @@
+     * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px 14px;
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #292929;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 27px;
+        }
+
+        .novo-pedido {
+            color: #166534;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resumo {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .indicador {
+            background: white;
+            border-radius: 10px;
+            padding: 17px 20px;
+            flex: 1;
+            min-width: 150px;
+            box-shadow: 0 2px 7px #00000008;
+        }
+
+        .indicador strong {
+            display: block;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .lista {
+            display: grid;
+            gap: 18px;
+        }
+
+        .pedido {
+            background: white;
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 2px 8px #0000000a;
+            border-left: 5px solid #e6a23c;
+        }
+
+        .pedido.entregue {
+            border-left-color: #16a34a;
+        }
+
+        .topo-pedido {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 0 0 7px;
+        }
+
+        .data {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .status {
+            padding: 7px 11px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            background: #fff1d6;
+            color: #8a5700;
+        }
+
+        .status.entregue {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        h3 {
+            margin: 22px 0 10px;
+            font-size: 16px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .detalhe {
+            color: #666;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .rodape-pedido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-top: 1px solid #eee;
+            margin-top: 15px;
+            padding-top: 18px;
+        }
+
+        .total {
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        button {
+            border: none;
+            border-radius: 7px;
+            background: #16834a;
+            color: white;
+            padding: 12px 17px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #106638;
+        }
+
+        .vazio {
+            background: white;
+            border-radius: 10px;
+            padding: 35px;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 480px) {
+            .pedido {
+                padding: 16px;
+            }
+
+            .rodape-pedido {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }

@@ -55,7 +55,7 @@ session_start()
         <?php endif; ?>
 
        <?php
-       /* echo '<pre>';
+       /*echo '<pre>';
         print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
         echo '</pre>';
         */?>
