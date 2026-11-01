@@ -16,8 +16,9 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
     if (mysqli_num_rows($resultado) < 1) {
 
         unset($_SESSION['email']);
-        unset($_SESSION['senha']);
         unset($_SESSION['tipo_usuario']);
+        unset($_SESSION['nome']);
+        
 
         header('Location: login.php');
         exit();
@@ -32,6 +33,7 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
 
             $_SESSION['email'] = $usuario['email'];
             $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
+            $_SESSION['nome'] = $usuario['nome'];
 
             header('Location: index.php');
             exit();
@@ -39,8 +41,9 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
         } else {
 
             unset($_SESSION['email']);
-            unset($_SESSION['senha']);
             unset($_SESSION['tipo_usuario']);
+            unset($_SESSION['nome']);
+
 
             header('Location: login.php');
             exit();
