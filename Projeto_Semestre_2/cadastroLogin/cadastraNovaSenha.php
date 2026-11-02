@@ -1,5 +1,5 @@
 <?php
-include_once('conexao.php');
+include_once('../conexao.php');
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
      
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         echo '<h2>Senha alterada com sucesso</h2>';
 
         }else{
-            echo '<h2>Registro não encontrado</h2>';
+            echo '<h2>as senhas não conferem ou os dados estão incorretos</h2>';
         }
 
     }
@@ -54,5 +54,5 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 }
 
 ?>
-<a href='index.php'>Tela Principal</a>
+<a href='login.php'>Login</a>
 <a href='esqueciSenha.php'>Mudar Senha</a>

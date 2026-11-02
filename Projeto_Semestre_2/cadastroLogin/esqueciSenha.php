@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>Mudar Senha</title>
 </head>
 
 <body>
     <div>
     <h1>Mudança de senha</h1>
-    <form action="cadastraNovaSenha.php" method='post'>
+    <form id="formulario" action="cadastraNovaSenha.php" method='post' onsubmit="mudarSenha(event)">
         <input type="email" name="email" placeholder="Digite seu email" required><br><br>
 
         <input id="CPF" type="text" name="cpf" placeholder="Digite seu CPF" required><br><br>
@@ -23,9 +23,10 @@
 
         <input type="text" name="nome_materno" placeholder="Digite o nome da sua mãe" required><br><br>
 
-        <input minlength="8" type="password" name="senha" placeholder="Digite sua nova senha" required><br><br>
+        <input id="senha" minlength="8" type="password" name="senha" placeholder="Digite sua nova senha" required><br><br>
 
-        <input minlength="8" type="password" name="senha_conf" placeholder="Confirme sua nova senha" required><br><br>
+        <input id="senha2" minlength="8" type="password" name="senha_conf" placeholder="Confirme sua nova senha" required><br><br>
+        <p id=erroSenha></p>
 
         <input type="submit" value="enviar">
 
@@ -50,5 +51,6 @@
     integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="js/mascaras.js"></script>
+<script src="../js/mascaras.js"></script>
+
 </html>

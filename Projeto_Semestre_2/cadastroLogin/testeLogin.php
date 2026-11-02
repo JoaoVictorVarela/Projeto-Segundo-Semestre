@@ -36,7 +36,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $senha === '') {
     falharLogin('Email ou senha incorretos.');
 }
 
-require __DIR__ . '/conexao.php';
+// TALVEZ DE ERRO AQUI (testar)
+require '../conexao.php';
 if (!isset($con) || $con->connect_error) {
     falharLogin('Não foi possível realizar o login agora. Tente novamente.');
 }

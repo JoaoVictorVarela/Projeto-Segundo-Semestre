@@ -36,7 +36,7 @@ session_start()
         
         <?php if (!isset($_SESSION['email'])): ?>
 
-        <a class="login-btn" href="login.php">Login</a>
+        <a class="login-btn" href="cadastroLogin/login.php">Login</a>
         
         <?php endif; ?>
         

@@ -48,7 +48,7 @@ if ($resposta === '' || strlen($resposta) > 120) {
     $resposta = '';
 }
 
-require __DIR__ . '/conexao.php';
+require '../conexao.php';
 if (!isset($con) || $con->connect_error) {
     voltarAoLogin('Não foi possível concluir a verificação. Faça login novamente.');
 }
@@ -115,5 +115,5 @@ $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
 $_SESSION['nome'] = $usuario['nome'];
 limparEtapaPendente();
 
-header('Location: index.php');
+header('Location: ../index.php');
 exit();

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
     <title>Cadastro</title>
 </head>
 
@@ -114,7 +114,7 @@
 
 </body>
 
-<script src="js/cadastro.js"></script>
+<script src="../js/cadastro.js"></script>
 <!--Script da submascara-->
 <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 
@@ -128,6 +128,6 @@
     integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="js/mascaras.js"></script>
+<script src="../js/mascaras.js"></script>
 
 </html>
