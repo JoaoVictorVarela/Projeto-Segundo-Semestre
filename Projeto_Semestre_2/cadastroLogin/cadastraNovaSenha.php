@@ -22,9 +22,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $resultado = $con->query($sql); 
 
     if (mysqli_num_rows($resultado) < 1){
-        echo '<h2>as senhas não conferem ou os dados estão incorretos</h2>';
+        echo '<h2>Dados estão incorretos</h2>';
+        header('Location: esqueciSenha.php');
         
-
     } 
     else{
         $usuario = $resultado->fetch_assoc(); 
@@ -46,7 +46,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         echo '<h2>Senha alterada com sucesso</h2>';
 
         }else{
-            echo '<h2>as senhas não conferem ou os dados estão incorretos</h2>';
+            echo '<h2>Dados estão incorretos</h2>';
+            header('Location: esqueciSenha.php');
+
         }
 
     }
@@ -54,5 +56,3 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 }
 
 ?>
-<a href='login.php'>Login</a>
-<a href='esqueciSenha.php'>Mudar Senha</a>

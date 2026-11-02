@@ -3,17 +3,17 @@
     include('../conexao.php');
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $nome = htmlspecialchars($_POST['nome']);
+        $nome = htmlspecialchars(trim($_POST['nome']));
 
-        $data_nascimento = htmlspecialchars($_POST['data_nascimento']);
+        $data_nascimento = htmlspecialchars(trim($_POST['data_nascimento']));
 
-        $genero = htmlspecialchars($_POST['genero']);
+        $genero = htmlspecialchars(trim($_POST['genero']));
 
-        $nome_materno = htmlspecialchars($_POST['nome_materno']);
+        $nome_materno = htmlspecialchars(trim($_POST['nome_materno']));
 
-        $email = htmlspecialchars($_POST['email']);
+        $email = htmlspecialchars(trim($_POST['email']));
   
-        $cep = htmlspecialchars($_POST['cep']);
+        $cep = htmlspecialchars(trim($_POST['cep']));
 
         $rua = $_POST['rua'];
         $bairro = $_POST['bairro'];
@@ -23,14 +23,14 @@
         // Concatena todos os dados de endereço e junta numa só variável para mandar pro banco
         $endereco = $rua . ", " . $bairro . " - " . $cidade . "/" . $estado;
 
-        $cpf = htmlspecialchars($_POST['cpf']);
+        $cpf = htmlspecialchars(trim($_POST['cpf']));
 
 
-        $telefone_celular = htmlspecialchars($_POST['telefone_celular']);
+        $telefone_celular = htmlspecialchars(trim($_POST['telefone_celular']));
 
-        $telefone_fixo = htmlspecialchars($_POST['telefone_fixo']);
+        $telefone_fixo = htmlspecialchars(trim($_POST['telefone_fixo']));
 
-        $senha = htmlspecialchars($_POST['senha']);
+        $senha = htmlspecialchars(trim($_POST['senha']));
 
         // Senha criptografada
         $senha_cript = password_hash($senha, PASSWORD_DEFAULT);

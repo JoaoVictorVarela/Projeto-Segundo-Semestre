@@ -26,7 +26,7 @@
         <input id="senha" minlength="8" type="password" name="senha" placeholder="Digite sua nova senha" required><br><br>
 
         <input id="senha2" minlength="8" type="password" name="senha_conf" placeholder="Confirme sua nova senha" required><br><br>
-        <p id=erroSenha></p>
+        <p id=erro-senha></p>
 
         <input type="submit" value="enviar">
 
@@ -52,5 +52,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="../js/mascaras.js"></script>
+<script src="../js/esqueciSenha.js"></script>
+
 
 </html>

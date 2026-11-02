@@ -1,21 +1,61 @@
-function mudarSenha(event){
+function mudarSenha(event) {
 
-event.preventDefault();
+    // Impede o envio automático do formulário
+    event.preventDefault();
 
-let formulario = document.getElementById('formulario')
+    // Referência ao formulário
+    const formulario =
+        document.getElementById('formulario');
 
-let senha = document.getElementById('senha')
-let senha2 = document.getElementById('senha2')
+    // =========================
+    // PEGA OS VALORES
+    // =========================
 
-let erroSenha = document.getElementById('erroSenha')
+    const senha =
+        document.getElementById('senha').value;
 
-if (senha !== senha2) {
+    const senha2 =
+        document.getElementById('senha2').value;
+
+   
+    // =========================
+    // MENSAGENS DE ERRO
+    // =========================
+
+    const erroSenha =
+        document.getElementById('erro-senha');
+
+
+    // Limpa mensagens antigas
+    erroSenha.textContent = "";
+    
+    // =========================
+    // VALIDAÇÃO DOS CAMPOS HTML
+    // =========================
+
+    if (!formulario.checkValidity()) {
+
+        formulario.reportValidity();
+
+        return;
+    }
+
+    // =========================
+    // VALIDAÇÃO SENHAS
+    // =========================
+
+    if (senha !== senha2) {
 
         erroSenha.textContent =
             "As senhas precisam ser iguais!";
-
         return;
-}
+    }else{
+        formulario.submit();
+    }
 
-formulario.submit()
+    // =========================================
+    // ENVIA OS DADOS PARA banco.php
+    // =========================================
+
+    formulario.submit();
 }
