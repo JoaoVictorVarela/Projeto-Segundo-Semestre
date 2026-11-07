@@ -26,7 +26,8 @@ $mensagemEscapada = htmlspecialchars((string) $erro, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <main class="auth-card">
+    <!-- Mudei Main para Div porque não tava aparecendo a caixa do form!-->
+    <div class="auth-card">
         <h1>Verificação em duas etapas</h1>
         <p class="challenge-intro">Para concluir o login, responda à pergunta de segurança:</p>
         <h2 class="challenge-question"><?= htmlspecialchars($pergunta['pergunta'], ENT_QUOTES, 'UTF-8') ?></h2>
@@ -50,7 +51,7 @@ $mensagemEscapada = htmlspecialchars((string) $erro, ENT_QUOTES, 'UTF-8');
             <button class="botao" type="submit">Enviar</button>
         </form>
 
-        <p class="auth-links"><a href="sair.php">Cancelar e voltar ao login</a></p>
-    </main>
+        <p class="auth-links"><a href="../sair.php">Cancelar e voltar ao login</a></p>
+        </div>
 </body>
 </html>

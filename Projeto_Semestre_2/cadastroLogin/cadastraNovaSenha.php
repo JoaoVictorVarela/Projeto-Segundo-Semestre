@@ -15,18 +15,16 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     $senha = htmlspecialchars(trim($_POST['senha']));
 
-    $senha_conf = htmlspecialchars(trim($_POST['senha_conf']));
-
-    $sql = "SELECT * FROM usuarios where email = '$email' and tipo_usuario = 'comum' " ;
+    $sql = "SELECT * FROM usuarios where email = '$email' and tipo_usuario = 'comum' LIMIT 1" ;
 
     $resultado = $con->query($sql); 
 
     if (mysqli_num_rows($resultado) < 1){
-        echo '<h2>Dados estão incorretos</h2>';
+        echo '<h2>usuario não encontrado</h2>';
         header('Location: esqueciSenha.php');
         
     } 
-    else{
+    else {
         $usuario = $resultado->fetch_assoc(); 
 
         $email_sql = $usuario['email'];
@@ -35,7 +33,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $data_nasc_sql = $usuario['data_nascimento'];
         $nome_materno_sql = $usuario['nome_materno'];
 
-        if($senha===$senha_conf && $email===$email_sql && $cpf===$cpf_sql && $cep===$cep_sql && $data_nascimento===$data_nasc_sql && $nome_materno===$nome_materno_sql){
+        if($email===$email_sql && $cpf===$cpf_sql && $cep===$cep_sql && $data_nascimento===$data_nasc_sql && $nome_materno===$nome_materno_sql){
 
         $hashsenha = password_hash($senha, PASSWORD_DEFAULT);
 
@@ -44,6 +42,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $resultado = $con->query($sql);
 
         echo '<h2>Senha alterada com sucesso</h2>';
+        header('Location: senhaAlterada.php');
 
         }else{
             echo '<h2>Dados estão incorretos</h2>';

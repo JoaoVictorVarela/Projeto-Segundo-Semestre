@@ -55,10 +55,10 @@ session_start()
         <?php endif; ?>
 
        <?php
-       /*echo '<pre>';
+       echo '<pre>';
         print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
         echo '</pre>';
-        */?>
+        ?>
     </nav>  
 
 
@@ -223,7 +223,7 @@ session_start()
                 </p>  
 
                 <div class="preco">  
-                    R$ 79,90  
+                    R$ 40,00  
                 </div>  
 
             </div>  
@@ -249,7 +249,7 @@ session_start()
                 </p>  
 
                 <div class="preco">  
-                    R$ 59,90  
+                    R$ 25,00  
                 </div>  
 
             </div>  
@@ -275,7 +275,7 @@ session_start()
                 </p>  
 
                 <div class="preco">  
-                    R$ 69,90  
+                    R$ 30,00  
                 </div>  
 
             </div>  
@@ -301,7 +301,7 @@ session_start()
                 </p>  
 
                 <div class="preco">  
-                    R$ 39,90  
+                    R$ 35,00  
                 </div>  
 
             </div>  
@@ -327,7 +327,7 @@ session_start()
                 </p>  
 
                 <div class="preco">  
-                    R$ 49,90  
+                    R$ 25,00  
                 </div>  
 
             </div>  

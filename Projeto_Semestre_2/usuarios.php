@@ -118,6 +118,13 @@ $conexao = $con->query($sql);
     </div>
 
     <a href="index.php"> Home</a>
+
+    <a href="gerarPdf.php">
+    <button type="button">
+        Baixar lista em PDF
+    </button>
+    </a>
+    
 </body>
 
 <script src="js/pesquisa.js"></script>
