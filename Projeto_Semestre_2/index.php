@@ -20,9 +20,11 @@ session_start()
 
     <div class="logo">  
         La Fome
+        
     </div>  
+    
 
-    <nav>  
+    <nav> 
 
         <a href="#inicio">Início</a>  
 
@@ -56,9 +58,17 @@ session_start()
 
        <?php
        /*echo '<pre>';
-        print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
-        echo '</pre>';
-        */?>
+       print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
+       echo '</pre>';
+       */?>
+        
+       <?php 
+      if (isset($_SESSION['nome'])){
+          // explode transforma a frase em um array, e cada palavra é uma posição dele
+          $nome = explode(' ', trim($_SESSION['nome'])); 
+          echo 'Olá ' . $nome[0];
+      }
+      ?>
     </nav>  
 
 
