@@ -12,6 +12,10 @@ if (empty($_SESSION['nome'])) {
     exit;
 }
 
+if ($_SESSION['tipo_usuario'] == 'admin'){
+    header('Location: index.php');
+}
+
 $resultado = $con->query(
     "SELECT id, nome, preco FROM pratos
      WHERE ativo = 1 ORDER BY nome"

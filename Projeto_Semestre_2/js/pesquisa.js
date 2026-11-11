@@ -11,5 +11,5 @@ search.addEventListener("keydown", function(event) {
 
 function searchData()
 {
-    window.location = 'usuarios.php?search=' + search.value;
+    window.location = 'usuarios.php?search=' + encodeURIComponent(search.value.trim());
 }

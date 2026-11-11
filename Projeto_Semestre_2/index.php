@@ -12,9 +12,10 @@ session_start()
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"  
     rel="stylesheet">  
 
+<link rel="stylesheet" href="css/tema.css">
 <link rel="stylesheet" href="css/index.css">
 </head>  
-<body>  <!-- CABEÇALHO -->  
+<body id="corpo_menu">  <!-- CABEÇALHO -->  
 
 <header>  
 
@@ -53,22 +54,22 @@ session_start()
         <?php if (isset($_SESSION['email'])): ?>
 
         <a href="sair.php"> Sair </a>
-
+        
         <?php endif; ?>
 
-       <?php
-       /*echo '<pre>';
-       print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
-       echo '</pre>';
-       */?>
         
        <?php 
-      if (isset($_SESSION['nome'])){
+     if (isset($_SESSION['nome'])){
           // explode transforma a frase em um array, e cada palavra é uma posição dele
           $nome = explode(' ', trim($_SESSION['nome'])); 
           echo 'Olá ' . $nome[0];
-      }
-      ?>
+          }
+          ?>
+          <?php
+          /*echo '<pre>';
+          print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
+          */echo '</pre>';
+          ?>
     </nav>  
 
 
@@ -643,6 +644,8 @@ session_start()
 <!-- JAVASCRIPT -->  
 
 <script src="js/index.js"></script>
+<script src="js/tema.js"></script>
+
 
 </body>  
 </html>
