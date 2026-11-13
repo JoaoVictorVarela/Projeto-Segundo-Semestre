@@ -1,4 +1,8 @@
-  * {  
+:root {
+    --tamanho-base: 16px;
+}
+
+* {  
         margin: 0;  
         padding: 0;  
         box-sizing: border-box;  
@@ -34,7 +38,7 @@
 
     .logo {  
         font-family: "Cormorant Garamond", serif;  
-        font-size: 40px;  
+        font-size: calc(var(--tamanho-base) * 2.5);  
         font-weight: 600;  
         font-style: italic;  
 
@@ -49,7 +53,7 @@
 
         margin-left: 25px;  
 
-        font-size: 15px;  
+        font-size: var(--tamanho-base);  
 
         transition: 0.3s;  
     }  
@@ -88,7 +92,7 @@
     .hero h1 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: 72px;  
+        font-size: calc(var(--tamanho-base) * 4.5);
         font-weight: 500;  
         font-style: italic;  
 
@@ -96,7 +100,7 @@
     }  
 
     .hero p {  
-        font-size: 18px;  
+        font-size: calc(var(--tamanho-base) * 1.125);  
         color: #ddd;  
 
         line-height: 1.6;  
@@ -107,6 +111,8 @@
     /* BOTÕES */  
 
     .btn {  
+        font-size: var(--tamanho-base);
+
         display: inline-block;  
 
         padding: 14px 32px;  
@@ -154,7 +160,7 @@
     .titulo span {  
         color: #d4af37;  
 
-        font-size: 13px;  
+        font-size: calc(var(--tamanho-base) * 0.8125);  
 
         letter-spacing: 4px;  
     }  
@@ -162,7 +168,7 @@
     .titulo h2 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: 52px;  
+        font-size: calc(var(--tamanho-base) * 3.25);  
         font-weight: 500;  
 
         margin-top: 10px;  
@@ -183,7 +189,7 @@
 
         line-height: 1.8;  
 
-        font-size: 17px;  
+        font-size: calc(var(--tamanho-base) * 1.0625);  
     }  
 
     /* CATEGORIAS */  
@@ -217,7 +223,7 @@
     .categoria h3 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: 29px;  
+        font-size: calc(var(--tamanho-base) * 1.8125);  
 
         font-weight: 500;  
 
@@ -229,7 +235,7 @@
     .categoria p {  
         color: #999;  
 
-        font-size: 14px;  
+        font-size: calc(var(--tamanho-base) * 0.875);  
 
         line-height: 1.5;  
     }  
@@ -276,7 +282,7 @@
     .prato-info h3 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: 29px;  
+        font-size: calc(var(--tamanho-base) * 1.8125);  
 
         font-weight: 500;  
 
@@ -286,7 +292,7 @@
     .prato-info p {  
         color: #aaa;  
 
-        font-size: 14px;  
+        font-size: calc(var(--tamanho-base) * 0.875);  
 
         line-height: 1.5;  
 
@@ -296,7 +302,7 @@
     .preco {  
         color: #d4af37;  
 
-        font-size: 20px;  
+        font-size: calc(var(--tamanho-base) * 1.25);  
 
         font-weight: bold;  
     }  
@@ -338,7 +344,7 @@
     .sobre-texto span {  
         color: #d4af37;  
 
-        font-size: 13px;  
+        font-size: calc(var(--tamanho-base) * 0.8125);  
 
         letter-spacing: 4px;  
     }  
@@ -346,7 +352,7 @@
     .sobre-texto h2 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: 52px;  
+        font-size: calc(var(--tamanho-base) * 3.25);  
 
         font-weight: 500;  
 
@@ -354,6 +360,8 @@
     }  
 
     .sobre-texto p {  
+        font-size: calc(var(--tamanho-base) * 1);
+
         color: #bbb;  
 
         line-height: 1.8;  
@@ -382,12 +390,14 @@
     .estrelas {  
         color: #d4af37;  
 
-        font-size: 20px;  
+        font-size: calc(var(--tamanho-base) * 1.25);  
 
         margin-bottom: 15px;  
     }  
 
     .avaliacao p {  
+        font-size: calc(var(--tamanho-base) * 1);
+
         color: #ccc;  
 
         line-height: 1.7;  
@@ -396,7 +406,7 @@
     }  
 
     .avaliacao h4 {  
-        font-size: 15px;  
+        font-size: calc(var(--tamanho-base) * 0.9375);  
     }  
 
     /* RESERVA */  
@@ -421,7 +431,7 @@
     .reserva h2 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: 56px;  
+        font-size: calc(var(--tamanho-base) * 3.5);  
 
         font-weight: 500;  
 
@@ -429,6 +439,8 @@
     }  
 
     .reserva p {  
+        font-size: calc(var(--tamanho-base) * 1);
+
         color: #ddd;  
 
         margin-bottom: 30px;  
@@ -455,7 +467,7 @@
 
         color: #d4af37;  
 
-        font-size: 30px;  
+        font-size: calc(var(--tamanho-base) * 1.875);  
 
         font-weight: 500;  
 
@@ -463,6 +475,8 @@
     }  
 
     .info-box p {  
+        font-size: calc(var(--tamanho-base) * 1);
+
         color: #aaa;  
 
         line-height: 1.8;  
@@ -497,7 +511,7 @@
     footer p {  
         color: #777;  
 
-        font-size: 13px;  
+        font-size: calc(var(--tamanho-base) * 0.8125);  
     }  
 
     /* WHATSAPP */  
@@ -540,7 +554,7 @@
         }  
 
         .hero h1 {  
-            font-size: 55px;  
+            font-size:calc(var(--tamanho-base) * 2.8125); 
         }  
 
         .categorias {  

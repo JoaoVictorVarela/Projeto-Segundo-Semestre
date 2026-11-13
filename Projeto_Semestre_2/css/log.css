@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+header {
+    background: #ffffff;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h2 {
+    color: #263b59;
+}
+
+header span {
+    color: #555;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.titulo {
+    margin-bottom: 25px;
+}
+
+.titulo h1 {
+    color: #263b59;
+    margin-bottom: 8px;
+}
+
+.titulo p {
+    color: #777;
+}
+
+.painel {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.pesquisa {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+select, input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+}
+
+select {
+    min-width: 160px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+}
+
+button {
+    background: #263b59;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #365579;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #263b59;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 13px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+tr:hover td {
+    background: #f8faff;
+}
+
+.metodo {
+    background: #e9f0fa;
+    color: #263b59;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.resultado {
+    margin-bottom: 15px;
+    color: #777;
+    font-size: 14px;
+}
+
+.vazio {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+}
+
+@media(max-width: 700px) {
+    .pesquisa {
+        flex-direction: column;
+    }
+
+    select, input, button {
+        width: 100%;
+    }
+
+    .painel {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+
+    header {
+        padding: 18px;
+    }
+}
