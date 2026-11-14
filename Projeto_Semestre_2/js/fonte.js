@@ -5,7 +5,7 @@
 
 const fontePadrao = 16;
 const fonteMinima = 12;
-const fonteMaxima = 26;
+const fonteMaxima = 20;
 
 // Recupera o tamanho salvo
 let tamanhoFonte = Number(localStorage.getItem("fonte")) || fontePadrao;

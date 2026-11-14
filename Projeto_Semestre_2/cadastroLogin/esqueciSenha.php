@@ -32,7 +32,7 @@
 
         <input type="submit" value="enviar">
 
-        <p>Tela Principal<a href="cadastro=.php"> Clique aqui</a>
+        <p>Tela Principal<a href="../index.php"> Clique aqui</a>
         <p>Login<a href="Login.php"> Clique aqui</a>
     </form>
     <div>

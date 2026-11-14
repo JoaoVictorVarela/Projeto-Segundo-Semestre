@@ -17,7 +17,7 @@ session_start()
 <link rel="stylesheet" href="css/fonte.css">
 </head>  
 
-<body id="corpo_menu">  <!-- CABEÇALHO -->  
+<body>  <!-- CABEÇALHO -->  
 
 <header>  
 
@@ -88,7 +88,11 @@ session_start()
     <button id="resetar" type="button" title="Restaurar fonte">
         ↺
     </button>
-
+    
+    
+    <button id="btnTema" type="button" title="Mudar Tema">
+    Tema
+    </button>
 </div>
 </header>  
 
@@ -660,10 +664,10 @@ session_start()
 
 <!-- JAVASCRIPT -->  
 
-<script src="js/index.js"></script>
-<script src="js/tema.js"></script>
-<script src="js/fonte.js"></script>
-
 
 </body>  
+
+<script src="js/tema.js"></script>
+<script src="js/index.js"></script>
+<script src="js/fonte.js"></script>
 </html>

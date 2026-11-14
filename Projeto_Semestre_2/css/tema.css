@@ -1,4 +1,113 @@
-:root{
-    --white: #fff;
-    --black: #000;
+
+/* ============================= */
+/* TEMA ESCURO (PADRÃO) */
+/* ============================= */
+
+body {
+    background-color: #111;
+    color: white;
+}
+
+/* ============================= */
+/* TEMA CLARO */
+/* ============================= */
+
+body.tema-claro {
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* CABEÇALHO */
+
+body.tema-claro header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #ddd;
+}
+
+body.tema-claro nav a {
+    color: #222;
+}
+
+/* SEÇÕES E TEXTOS */
+
+body.tema-claro .intro p {
+    color: #555;
+}
+
+body.tema-claro .categoria {
+    border-color: #ddd;
+}
+
+body.tema-claro .categoria p {
+    color: #666;
+}
+
+/* CARDS DOS PRATOS */
+
+body.tema-claro .prato {
+    background: #fff;
+    border-color: #ddd;
+}
+
+body.tema-claro .prato-info p {
+    color: #666;
+}
+
+/* AVALIAÇÕES */
+
+body.tema-claro .avaliacao {
+    background: #fff;
+    border-color: #ddd;
+}
+
+body.tema-claro .avaliacao p {
+    color: #555;
+}
+
+/* OUTRAS SEÇÕES */
+
+body.tema-claro .sobre-texto p {
+    color: #555;
+}
+
+body.tema-claro .menu-completo p {
+    color: #555;
+}
+
+body.tema-claro .informacoes {
+    background: #eaeaea;
+}
+
+body.tema-claro .info-box p,
+body.tema-claro .info-box a {
+    color: #555;
+}
+
+/* RODAPÉ */
+
+body.tema-claro footer {
+    background: #ddd;
+    border-top: 1px solid #ccc;
+}
+
+body.tema-claro footer p {
+    color: #555;
+}
+
+/* BOTÃO DE TEMA */
+
+#btnTema {
+    cursor: pointer;
+    padding: 9px 15px;
+    border: 1px solid #d4af37;
+    border-radius: 6px;
+    background: transparent;
+    color: #d4af37;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#btnTema:hover {
+    background: #d4af37;
+    color: #111;
 }
