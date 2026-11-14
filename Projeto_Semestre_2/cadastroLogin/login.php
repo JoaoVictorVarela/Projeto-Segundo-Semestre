@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <a id="btn-home" href="../index.php" aria-label="Voltar para a página inicial">Home</a>
+
     <div>
         <h1>Tela de Login</h1>
 

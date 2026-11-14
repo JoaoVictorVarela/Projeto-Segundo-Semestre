@@ -64,14 +64,14 @@ session_start()
      if (isset($_SESSION['nome'])){
           // explode transforma a frase em um array, e cada palavra é uma posição dele
           $nome = explode(' ', trim($_SESSION['nome'])); 
-          echo 'Olá ' . $nome[0];
+          echo "<a> Olá, $nome[0]</a>" ;
           }
           ?>
           <?php
           /*echo '<pre>';
           print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
-          */echo '</pre>';
-          ?>
+          echo '</pre>';
+          */?>
 
     </nav>  
 

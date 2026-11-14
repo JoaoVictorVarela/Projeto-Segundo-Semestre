@@ -200,8 +200,9 @@ button:hover {
     top: 15px;
     left: 15px;
     z-index: 1001;
-    width: 42px;
+    width: auto;
     height: 42px;
+    padding: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,8 +1,4 @@
-:root {
-    --tamanho-base: 16px;
-}
-
-* {  
+  * {  
         margin: 0;  
         padding: 0;  
         box-sizing: border-box;  
@@ -38,7 +34,7 @@
 
     .logo {  
         font-family: "Cormorant Garamond", serif;  
-        font-size: calc(var(--tamanho-base) * 2.5);  
+        font-size: 40px;  
         font-weight: 600;  
         font-style: italic;  
 
@@ -53,7 +49,7 @@
 
         margin-left: 25px;  
 
-        font-size: var(--tamanho-base);  
+        font-size: 15px;  
 
         transition: 0.3s;  
     }  
@@ -92,7 +88,7 @@
     .hero h1 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: calc(var(--tamanho-base) * 4.5);
+        font-size: 72px;  
         font-weight: 500;  
         font-style: italic;  
 
@@ -100,7 +96,7 @@
     }  
 
     .hero p {  
-        font-size: calc(var(--tamanho-base) * 1.125);  
+        font-size: 18px;  
         color: #ddd;  
 
         line-height: 1.6;  
@@ -111,8 +107,6 @@
     /* BOTÕES */  
 
     .btn {  
-        font-size: var(--tamanho-base);
-
         display: inline-block;  
 
         padding: 14px 32px;  
@@ -160,7 +154,7 @@
     .titulo span {  
         color: #d4af37;  
 
-        font-size: calc(var(--tamanho-base) * 0.8125);  
+        font-size: 13px;  
 
         letter-spacing: 4px;  
     }  
@@ -168,7 +162,7 @@
     .titulo h2 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: calc(var(--tamanho-base) * 3.25);  
+        font-size: 52px;  
         font-weight: 500;  
 
         margin-top: 10px;  
@@ -189,7 +183,7 @@
 
         line-height: 1.8;  
 
-        font-size: calc(var(--tamanho-base) * 1.0625);  
+        font-size: 17px;  
     }  
 
     /* CATEGORIAS */  
@@ -223,7 +217,7 @@
     .categoria h3 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: calc(var(--tamanho-base) * 1.8125);  
+        font-size: 29px;  
 
         font-weight: 500;  
 
@@ -235,7 +229,7 @@
     .categoria p {  
         color: #999;  
 
-        font-size: calc(var(--tamanho-base) * 0.875);  
+        font-size: 14px;  
 
         line-height: 1.5;  
     }  
@@ -282,7 +276,7 @@
     .prato-info h3 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: calc(var(--tamanho-base) * 1.8125);  
+        font-size: 29px;  
 
         font-weight: 500;  
 
@@ -292,7 +286,7 @@
     .prato-info p {  
         color: #aaa;  
 
-        font-size: calc(var(--tamanho-base) * 0.875);  
+        font-size: 14px;  
 
         line-height: 1.5;  
 
@@ -302,7 +296,7 @@
     .preco {  
         color: #d4af37;  
 
-        font-size: calc(var(--tamanho-base) * 1.25);  
+        font-size: 20px;  
 
         font-weight: bold;  
     }  
@@ -344,7 +338,7 @@
     .sobre-texto span {  
         color: #d4af37;  
 
-        font-size: calc(var(--tamanho-base) * 0.8125);  
+        font-size: 13px;  
 
         letter-spacing: 4px;  
     }  
@@ -352,7 +346,7 @@
     .sobre-texto h2 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: calc(var(--tamanho-base) * 3.25);  
+        font-size: 52px;  
 
         font-weight: 500;  
 
@@ -360,8 +354,6 @@
     }  
 
     .sobre-texto p {  
-        font-size: calc(var(--tamanho-base) * 1);
-
         color: #bbb;  
 
         line-height: 1.8;  
@@ -390,14 +382,12 @@
     .estrelas {  
         color: #d4af37;  
 
-        font-size: calc(var(--tamanho-base) * 1.25);  
+        font-size: 20px;  
 
         margin-bottom: 15px;  
     }  
 
     .avaliacao p {  
-        font-size: calc(var(--tamanho-base) * 1);
-
         color: #ccc;  
 
         line-height: 1.7;  
@@ -406,7 +396,7 @@
     }  
 
     .avaliacao h4 {  
-        font-size: calc(var(--tamanho-base) * 0.9375);  
+        font-size: 15px;  
     }  
 
     /* RESERVA */  
@@ -431,7 +421,7 @@
     .reserva h2 {  
         font-family: "Cormorant Garamond", serif;  
 
-        font-size: calc(var(--tamanho-base) * 3.5);  
+        font-size: 56px;  
 
         font-weight: 500;  
 
@@ -439,8 +429,6 @@
     }  
 
     .reserva p {  
-        font-size: calc(var(--tamanho-base) * 1);
-
         color: #ddd;  
 
         margin-bottom: 30px;  
@@ -467,7 +455,7 @@
 
         color: #d4af37;  
 
-        font-size: calc(var(--tamanho-base) * 1.875);  
+        font-size: 30px;  
 
         font-weight: 500;  
 
@@ -475,8 +463,6 @@
     }  
 
     .info-box p {  
-        font-size: calc(var(--tamanho-base) * 1);
-
         color: #aaa;  
 
         line-height: 1.8;  
@@ -511,7 +497,7 @@
     footer p {  
         color: #777;  
 
-        font-size: calc(var(--tamanho-base) * 0.8125);  
+        font-size: 13px;  
     }  
 
     /* WHATSAPP */  
@@ -548,13 +534,30 @@
     /* RESPONSIVO */  
 
     @media (max-width: 900px) {  
+  
+        header {
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 14px 24px;
+            padding: 15px 5%;
+        }
 
-        nav {  
-            display: none;  
-        }  
+        nav {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 18px;
+        }
+
+        nav a {
+            margin-left: 0;
+            padding: 4px 0;
+            font-size: 14px;
+        }
 
         .hero h1 {  
-            font-size:calc(var(--tamanho-base) * 2.8125); 
+            font-size: 55px;  
         }  
 
         .categorias {  
@@ -584,9 +587,22 @@
             padding: 70px 5%;  
         }  
 
+        header {
+            padding: 13px 4%;
+        }
+
         .logo {  
             font-size: 35px;  
-        }  
+        }
+
+        nav {
+            justify-content: flex-start;
+            gap: 5px 14px;
+        }
+
+        nav a {
+            font-size: 13px;
+        }
 
         .hero h1 {  
             font-size: 45px;  

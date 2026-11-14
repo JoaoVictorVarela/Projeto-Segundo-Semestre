@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <a id="btn-home" href="../index.php" aria-label="Voltar para a página inicial">Home</a>
+
     <div>
     <h1>Mudança de senha</h1>
     <form id="formulario" action="cadastraNovaSenha.php" method='post' onsubmit="mudarSenha(event)">
