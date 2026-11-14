@@ -96,6 +96,7 @@ $entregues = count($pedidos) - $pendentes;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gerenciamento de pedidos</title>
     <link rel="stylesheet" href="css/pedidos.css">
+
 </head>
 <body>
 
@@ -103,6 +104,7 @@ $entregues = count($pedidos) - $pendentes;
 
     <header>
         <h1>📋 Gerenciamento de pedidos</h1>
+
         <a class="novo-pedido" href="index.php">
             Home
         </a>
@@ -235,4 +237,5 @@ $entregues = count($pedidos) - $pendentes;
 </div>
 
 </body>
+
 </html>

@@ -56,6 +56,7 @@ aplicarTema(temaAtual);
 
 // ===============================
 // CLIQUE NO BOTÃO
+// Quando o botão for clicado vai mudar o tema
 // ===============================
 
 botaoTema.addEventListener("click", function() {

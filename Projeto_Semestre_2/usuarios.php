@@ -30,6 +30,7 @@ function h($valor) {
     return htmlspecialchars((string) $valor, ENT_QUOTES, 'UTF-8');
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -40,6 +41,7 @@ function h($valor) {
 </head>
 <body>
     <main class="pagina-usuarios">
+
         <header class="cabecalho-usuarios">
             <a class="logo" href="index.php" aria-label="Voltar para a página inicial">La Fome</a>
             <div>
@@ -85,7 +87,6 @@ function h($valor) {
                                 <th scope="col">CPF</th>
                                 <th scope="col">Celular</th>
                                 <th scope="col">Telefone fixo</th>
-                                <th scope="col">Senha</th>
                                 <th scope="col">Ação</th>
                             </tr>
                         </thead>
@@ -104,7 +105,6 @@ function h($valor) {
                                     <td data-label="CPF"><?= h($dados_user['cpf']) ?></td>
                                     <td data-label="Celular"><?= h($dados_user['telefone_celular']) ?></td>
                                     <td data-label="Telefone fixo"><?= h($dados_user['telefone_fixo']) ?></td>
-                                    <td data-label="Senha"><?= h($dados_user['senha']) ?></td>
                                     <td class="acoes-celular" data-label="Ação">
                                         <a class="btn-excluir" href="deletar.php?id=<?= (int) $dados_user['id'] ?>" aria-label="Excluir <?= h($dados_user['nome']) ?>">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">

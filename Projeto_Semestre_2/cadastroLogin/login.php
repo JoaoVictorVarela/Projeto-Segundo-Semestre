@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/tema.css">
 </head>
 
 <body>
     <a id="btn-home" href="../index.php" aria-label="Voltar para a página inicial">Home</a>
 
-    <div>
+    <div class= "login">
         <h1>Tela de Login</h1>
 
         <a id="mensagem-geral-login"></a>
@@ -31,8 +32,22 @@
 
         <p>Não possui login? <a href="cadastro.php">Clique aqui</a>
         <p>Esqueceu a senha? <a href="esqueciSenha.php">Clique aqui</a>
-        </div>
+        
+    <div class="controles" aria-label="Controles de tamanho da fonte">
+
+    
+    <button id="btnTema" type="button" title="Mudar Tema">
+    Tema
+    </button>
+    </div>
+
+    </div>
+
+        
         
 </body>
+
+<script src="../js/tema.js"></script>
+
 
 </html>

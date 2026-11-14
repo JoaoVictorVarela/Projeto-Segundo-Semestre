@@ -17,6 +17,39 @@ body.tema-claro {
     color: #222;
 }
 
+body.tema-claro .login{
+background-color: #f5f5f5;
+    color: #222;
+}
+
+body.tema-claro .mudarSenha{
+background-color: #f5f5f5;
+    color: #222;
+}
+
+body.tema-claro h2{
+background-color: #f5f5f5;
+    color: #222;
+}
+
+body.tema-claro .container{
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+body.tema-claro .container label {
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* Usuarios */
+
+body.tema-claro .tabela-wrapper{
+    background-color: #f5f5f5;
+    color: #222;
+
+}
+
 /* CABEÇALHO */
 
 body.tema-claro header {

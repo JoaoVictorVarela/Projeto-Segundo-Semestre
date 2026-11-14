@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/tema.css">
     <title>Cadastro</title>
 </head>
 
 <body>
     <a class="btn-home" href="../index.php" aria-label="Voltar para a página inicial">Home</a>
+
 
     <div class="container">
         <div class="abacate">
@@ -24,6 +26,8 @@
             </p>
 
         </div>
+
+
         <!--O "event" é quando o formulário é enviado-->
         <form action="inserirBanco.php" method="post" id="formulario" onsubmit="cadastrar(event)" novalidate>
 
@@ -106,6 +110,11 @@
                     Limpar Tela
                 </button>
 
+                <br><br>
+                <button id="btnTema" type="button" title="Mudar Tema">
+                    Tema
+                </button>
+
                 
             </div>
 
@@ -117,6 +126,7 @@
 </body>
 
 <script src="../js/cadastro.js"></script>
+<script src="../js/tema.js"></script>
 <!--Script da submascara-->
 <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 

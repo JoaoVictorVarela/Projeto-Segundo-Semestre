@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/tema.css">
     <title>Mudar Senha</title>
 </head>
 
 <body>
     <a id="btn-home" href="../index.php" aria-label="Voltar para a página inicial">Home</a>
 
-    <div>
+    <div class="mudarSenha">
     <h1>Mudança de senha</h1>
     <form id="formulario" action="cadastraNovaSenha.php" method='post' onsubmit="mudarSenha(event)">
         <input type="email" name="email" placeholder="Digite seu email" required><br><br>
@@ -30,10 +31,13 @@
         <input id="senha2" minlength="8" type="password" name="senha_conf" placeholder="Confirme sua nova senha" required><br><br>
         <p id=erro-senha></p>
 
-        <input type="submit" value="enviar">
+        <input type="submit" value="Enviar">
 
         <p>Tela Principal<a href="../index.php"> Clique aqui</a>
         <p>Login<a href="Login.php"> Clique aqui</a>
+        <button id="btnTema" type="button" title="Mudar Tema">
+            Tema
+        </button>
     </form>
     <div>
 </body>
@@ -55,6 +59,8 @@
 
 <script src="../js/mascaras.js"></script>
 <script src="../js/esqueciSenha.js"></script>
+
+<script src="../js/tema.js"></script>
 
 
 </html>
