@@ -13,7 +13,7 @@
     <a class="btn-home" href="../index.php" aria-label="Voltar para a página inicial">Home</a>
 
 
-    <div class="container">
+    <div class="container_cadastro">
         <div class="abacate">
             <br><br>
             <h1>Cadastro de Usuário</h1>

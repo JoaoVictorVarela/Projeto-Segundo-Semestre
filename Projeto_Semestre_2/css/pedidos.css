@@ -1,184 +1,327 @@
-     * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            padding: 25px 14px;
-            font-family: Arial, sans-serif;
-            background: #f3f4f6;
-            color: #292929;
-        }
+/* ============================= */
+/* CONFIGURAÇÕES GERAIS */
+/* ============================= */
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 22px;
-        }
+body {
+    margin: 0;
+    padding: 25px 14px;
+    font-family: Arial, sans-serif;
 
-        h1 {
-            margin: 0;
-            font-size: 27px;
-        }
+    /* Tema escuro padrão */
+    background: #111;
+    color: #f1f1f1;
 
-        .novo-pedido {
-            color: #166534;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    min-height: 100vh;
+}
 
-        .resumo {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
+.container_pedidos {
+    max-width: 1100px;
+    margin: auto;
+}
 
-        .indicador {
-            background: white;
-            border-radius: 10px;
-            padding: 17px 20px;
-            flex: 1;
-            min-width: 150px;
-            box-shadow: 0 2px 7px #00000008;
-        }
+/* ============================= */
+/* CABEÇALHO */
+/* ============================= */
 
-        .indicador strong {
-            display: block;
-            font-size: 25px;
-            margin-bottom: 5px;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+}
 
-        .lista {
-            display: grid;
-            gap: 18px;
-        }
+h1 {
+    margin: 0;
+    font-size: 27px;
+    color: #f5f5f5;
+}
 
-        .pedido {
-            background: white;
-            border-radius: 12px;
-            padding: 22px;
-            box-shadow: 0 2px 8px #0000000a;
-            border-left: 5px solid #e6a23c;
-        }
+.botoes-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
 
-        .pedido.entregue {
-            border-left-color: #16a34a;
-        }
+.novo-pedido {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        .topo-pedido {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.novo-pedido:hover {
+    color: #f1d77c;
+}
 
-        h2 {
-            font-size: 20px;
-            margin: 0 0 7px;
-        }
+/* Botão de tema */
 
-        .data {
-            color: #666;
-            font-size: 14px;
-        }
+#btnTema {
+    padding: 9px 15px;
+    border: 1px solid #d4af37;
+    border-radius: 6px;
+    background: transparent;
+    color: #d4af37;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .status {
-            padding: 7px 11px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-            background: #fff1d6;
-            color: #8a5700;
-        }
+#btnTema:hover {
+    background: #d4af37;
+    color: #111;
+}
 
-        .status.entregue {
-            background: #dcfce7;
-            color: #166534;
-        }
+/* ============================= */
+/* RESUMO DOS PEDIDOS */
+/* ============================= */
 
-        h3 {
-            margin: 22px 0 10px;
-            font-size: 16px;
-        }
+.resumo {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
 
-        .item {
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
+.indicador {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 17px 20px;
+    flex: 1;
+    min-width: 150px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+    color: #ccc;
+}
 
-        .item:last-child {
-            border-bottom: none;
-        }
+.indicador strong {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: #d4af37;
+}
 
-        .detalhe {
-            color: #666;
-            font-size: 13px;
-            margin-top: 4px;
-        }
+/* ============================= */
+/* LISTA DE PEDIDOS */
+/* ============================= */
 
-        .rodape-pedido {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            border-top: 1px solid #eee;
-            margin-top: 15px;
-            padding-top: 18px;
-        }
+.lista {
+    display: grid;
+    gap: 18px;
+}
 
-        .total {
-            font-size: 21px;
-            font-weight: bold;
-        }
+.pedido {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-left: 5px solid #e6a23c;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
 
-        button {
-            border: none;
-            border-radius: 7px;
-            background: #16834a;
-            color: white;
-            padding: 12px 17px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.pedido.entregue {
+    border-left-color: #16a34a;
+}
 
-        button:hover {
-            background: #106638;
-        }
+/* ============================= */
+/* INFORMAÇÕES DO PEDIDO */
+/* ============================= */
 
-        .vazio {
-            background: white;
-            border-radius: 10px;
-            padding: 35px;
-            text-align: center;
-            color: #666;
-        }
+.topo-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-        @media (max-width: 480px) {
-            .pedido {
-                padding: 16px;
-            }
+h2 {
+    font-size: 20px;
+    margin: 0 0 7px;
+    color: #f5f5f5;
+}
 
-            .rodape-pedido {
-                align-items: stretch;
-                flex-direction: column;
-            }
+.data {
+    color: #aaa;
+    font-size: 14px;
+}
 
-            button {
-                width: 100%;
-            }
-        }
+/* ============================= */
+/* STATUS */
+/* ============================= */
+
+.status {
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background: #493719;
+    color: #ffd27a;
+}
+
+.status.entregue {
+    background: #173d29;
+    color: #86efac;
+}
+
+/* ============================= */
+/* PRATOS PEDIDOS */
+/* ============================= */
+
+h3 {
+    margin: 22px 0 10px;
+    font-size: 16px;
+    color: #d4af37;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #383838;
+    color: #eee;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item strong {
+    color: #f5f5f5;
+}
+
+.detalhe {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* ============================= */
+/* RODAPÉ DO PEDIDO */
+/* ============================= */
+
+.rodape-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid #383838;
+    margin-top: 15px;
+    padding-top: 18px;
+}
+
+.total {
+    font-size: 21px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+/* ============================= */
+/* BOTÃO FINALIZAR PEDIDO */
+/* ============================= */
+
+.rodape-pedido button {
+    border: none;
+    border-radius: 7px;
+    background: #16834a;
+    color: white;
+    padding: 12px 17px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rodape-pedido button:hover {
+    background: #106638;
+}
+
+/* ============================= */
+/* LISTA VAZIA */
+/* ============================= */
+
+.vazio {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 35px;
+    text-align: center;
+    color: #aaa;
+}
+
+.vazio h2 {
+    color: #d4af37;
+}
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    header {
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .botoes-header {
+        gap: 14px;
+    }
+
+    .resumo {
+        gap: 10px;
+    }
+
+    .indicador {
+        min-width: 130px;
+        padding: 14px;
+    }
+
+    .pedido {
+        padding: 16px;
+    }
+
+    .topo-pedido {
+        gap: 12px;
+    }
+
+    .rodape-pedido {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .rodape-pedido button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .botoes-header {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .indicador {
+        min-width: 100%;
+    }
+
+    .item {
+        font-size: 13px;
+    }
+}

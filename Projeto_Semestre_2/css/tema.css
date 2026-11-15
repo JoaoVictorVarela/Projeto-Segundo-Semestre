@@ -13,47 +13,201 @@ body {
 /* ============================= */
 
 body.tema-claro {
-    background-color: #f5f5f5;
-    color: #222;
+    background: #f5f5f5;
+    color: #292929;
 }
+
+
+/* Login */
 
 body.tema-claro .login{
 background-color: #f5f5f5;
     color: #222;
 }
 
+body.tema-claro .login h2{
+background-color: #f5f5f5;
+    color: #222;
+}
+
+/* Esqueci Senha */
+
 body.tema-claro .mudarSenha{
-background-color: #f5f5f5;
-    color: #222;
-}
-
-body.tema-claro h2{
-background-color: #f5f5f5;
-    color: #222;
-}
-
-body.tema-claro .container{
     background-color: #f5f5f5;
+    color: #000000;
+}
+
+/* Cadastro */
+
+body.tema-claro .container_cadastro{
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+body.tema-claro .container_cadastro label {
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+/*==============================*/
+/*          USUÁRIOS            */ 
+/*==============================*/
+
+/* Cabeçalho */
+body.tema-claro .cabecalho-usuarios {
+    border-bottom-color: #ddd;
+}
+
+body.tema-claro .cabecalho-usuarios h1 {
     color: #222;
 }
 
-body.tema-claro .container label {
-    background-color: #f5f5f5;
-    color: #222;
+body.tema-claro .subtitulo {
+    color: #666;
 }
 
-/* Usuarios */
+/* Logo */
+body.tema-claro .logo {
+    color: #a78317;
+}
 
-body.tema-claro .tabela-wrapper{
-    background-color: #f5f5f5;
+/* Painel principal */
+body.tema-claro .painel {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: #ddd;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.10);
+}
+
+/* Pesquisa */
+
+body.tema-claro .box-search label {
+    color: #997515;
+}
+
+body.tema-claro .box-search input {
     color: #222;
+    background: #fff;
+    border-color: #ccc;
+}
 
+body.tema-claro .box-search input::placeholder {
+    color: #888;
+}
+
+body.tema-claro .box-search input:focus {
+    border-color: #b8942c;
+    box-shadow: 0 0 0 2px rgba(184, 148, 44, 0.15);
+}
+
+/* Botão pesquisar */
+body.tema-claro .btn-pesquisar {
+    color: #fff;
+    background: #a78317;
+    border-color: #a78317;
+}
+
+body.tema-claro .btn-pesquisar:hover {
+    color: #a78317;
+    background: transparent;
+}
+
+/* Tabela */
+body.tema-claro .tabela-wrapper {
+    border-color: #ddd;
+}
+
+body.tema-claro table {
+    background: #fff;
+}
+
+body.tema-claro thead {
+    background: #eaeaea;
+}
+
+body.tema-claro th {
+    color: #997515;
+}
+
+body.tema-claro td {
+    color: #333;
+    border-bottom-color: #e5e5e5;
+}
+
+body.tema-claro tbody tr:hover {
+    background: #f1f1f1;
+}
+
+/* Cartões da tabela no celular */
+@media (max-width: 600px) {
+
+    body.tema-claro tbody tr {
+        background: #fff;
+        border-color: #ddd;
+    }
+
+    body.tema-claro tbody tr:hover {
+        background: #f5f5f5;
+    }
+
+    body.tema-claro td {
+        border-bottom-color: #e5e5e5;
+    }
+
+    body.tema-claro td::before {
+        color: #997515;
+    }
+}
+
+/* Botão excluir */
+body.tema-claro .btn-excluir {
+    color: #b02a37;
+    background: #fff0f0;
+    border-color: #dc7070;
+}
+
+body.tema-claro .btn-excluir:hover {
+    color: #fff;
+    background: #c03939;
+    border-color: #c03939;
+}
+
+/* Botões inferiores */
+body.tema-claro .btn-secundario {
+    color: #997515;
+    background: transparent;
+    border-color: #b8942c;
+}
+
+body.tema-claro .btn-secundario:hover {
+    color: #fff;
+    background: #a78317;
+    border-color: #a78317;
+}
+
+/* Botão de tema */
+body.tema-claro #btnTema {
+    color: #997515;
+    border-color: #b8942c;
+}
+
+body.tema-claro #btnTema:hover {
+    color: #fff;
+    background: #a78317;
+}
+
+/* Mensagem quando não existem usuários */
+body.tema-claro .vazio {
+    color: #666;
+}
+
+body.tema-claro .vazio h2 {
+    color: #222;
 }
 
 /* CABEÇALHO */
 
 body.tema-claro header {
-    background: rgba(255, 255, 255, 0.95);
+    background: #f5f5f5;
     border-bottom: 1px solid #ddd;
 }
 
@@ -143,4 +297,232 @@ body.tema-claro footer p {
 #btnTema:hover {
     background: #d4af37;
     color: #111;
+}
+
+
+
+/* PEDIDOS */
+
+/* Cabeçalho */
+
+body.tema-claro header h1 {
+    color: #222;
+}
+
+body.tema-claro .novo-pedido {
+    color: #997515;
+}
+
+body.tema-claro .novo-pedido:hover {
+    color: #c49b27;
+}
+
+/* Indicadores */
+
+body.tema-claro .indicador {
+    background: #fff;
+    border-color: #ddd;
+    color: #555;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+body.tema-claro .indicador strong {
+    color: #997515;
+}
+
+/* Cartões de pedidos */
+
+body.tema-claro .pedido {
+    background: #fff;
+    border-color: #ddd;
+    border-left-color: #e6a23c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.tema-claro .pedido.entregue {
+    border-left-color: #16a34a;
+}
+
+/* Informações */
+
+body.tema-claro .pedido h2 {
+    color: #222;
+}
+
+body.tema-claro .data {
+    color: #666;
+}
+
+body.tema-claro .pedido h3 {
+    color: #997515;
+}
+
+/* Status */
+
+body.tema-claro .status {
+    background: #fff1d6;
+    color: #8a5700;
+}
+
+body.tema-claro .status.entregue {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* Itens */
+
+body.tema-claro .item {
+    color: #333;
+    border-bottom-color: #eee;
+}
+
+body.tema-claro .item strong {
+    color: #222;
+}
+
+body.tema-claro .detalhe {
+    color: #666;
+}
+
+/* Rodapé */
+
+body.tema-claro .rodape-pedido {
+    border-top-color: #eee;
+}
+
+body.tema-claro .total {
+    color: #997515;
+}
+
+/* Botão finalizar */
+
+body.tema-claro .rodape-pedido button {
+    background: #16834a;
+    color: #fff;
+}
+
+body.tema-claro .rodape-pedido button:hover {
+    background: #106638;
+}
+
+/* Lista vazia */
+
+body.tema-claro .vazio {
+    background: #fff;
+    border-color: #ddd;
+    color: #666;
+}
+
+body.tema-claro .vazio h2 {
+    color: #997515;
+}
+
+/* Botão de tema */
+
+body.tema-claro #btnTema {
+    color: #997515;
+    border-color: #b8942c;
+}
+
+body.tema-claro #btnTema:hover {
+    background: #a78317;
+    color: #fff;
+}
+
+/* ================================= */
+/* TEMA CLARO - FAZER PEDIDO */
+/* ================================= */
+
+/* Fundo principal */
+body.pagina-fazer-pedido.tema-claro {
+    background: #f5f5f5;
+    color: #292929;
+}
+
+/* Container */
+body.pagina-fazer-pedido.tema-claro .container {
+    background: #ffffff;
+    border-color: #ddd;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+}
+
+/* Título */
+body.pagina-fazer-pedido.tema-claro h1 {
+    color: #222;
+}
+
+/* Título do cardápio */
+body.pagina-fazer-pedido.tema-claro h3 {
+    color: #a78317;
+}
+
+/* Pratos */
+body.pagina-fazer-pedido.tema-claro .prato {
+    background: #fff;
+    border-bottom-color: #ddd;
+}
+
+/* Nome dos pratos */
+body.pagina-fazer-pedido.tema-claro .nome {
+    color: #222;
+}
+
+/* Preços */
+body.pagina-fazer-pedido.tema-claro .preco {
+    color: #666;
+}
+
+/* Quantidade */
+body.pagina-fazer-pedido.tema-claro .quantidade {
+    background: #fff;
+    color: #222;
+    border-color: #ccc;
+}
+
+/* Campo de quantidade selecionado */
+body.pagina-fazer-pedido.tema-claro .quantidade:focus {
+    border-color: #b8942c;
+    box-shadow: 0 0 0 2px rgba(184, 148, 44, 0.15);
+}
+
+/* Subtotal */
+body.pagina-fazer-pedido.tema-claro .subtotal {
+    color: #333;
+}
+
+/* Total */
+body.pagina-fazer-pedido.tema-claro .total {
+    color: #a78317;
+}
+
+/* Botão HOME */
+body.pagina-fazer-pedido.tema-claro .btn-home {
+    color: #997515;
+    border-color: #b8942c;
+}
+
+body.pagina-fazer-pedido.tema-claro .btn-home:hover {
+    background: #a78317;
+    color: #fff;
+}
+
+/* Botão de tema */
+body.pagina-fazer-pedido.tema-claro #btnTema {
+    color: #997515;
+    border-color: #b8942c;
+}
+
+body.pagina-fazer-pedido.tema-claro #btnTema:hover {
+    background: #a78317;
+    color: #fff;
+}
+
+/* Botão finalizar pedido */
+body.pagina-fazer-pedido.tema-claro #formPedido button[type="submit"] {
+    background: #16834a;
+    color: #fff;
+}
+
+body.pagina-fazer-pedido.tema-claro #formPedido button[type="submit"]:hover {
+    background: #106638;
 }

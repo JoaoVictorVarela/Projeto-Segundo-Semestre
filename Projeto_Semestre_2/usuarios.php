@@ -38,6 +38,7 @@ function h($valor) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de usuários | La Fome</title>
     <link rel="stylesheet" href="css/usuarios.css">
+    <link rel="stylesheet" href="css/tema.css">
 </head>
 <body>
     <main class="pagina-usuarios">
@@ -69,6 +70,8 @@ function h($valor) {
                     Pesquisar
                 </button>
             </div>
+
+            
 
             <div class="tabela-wrapper">
                 <?php if ($conexao && $conexao->num_rows > 0): ?>
@@ -127,11 +130,18 @@ function h($valor) {
 
             <nav class="acoes" aria-label="Ações da lista">
                 <a class="btn-secundario" href="index.php">Voltar para a Home</a>
+                
                 <a class="btn-secundario" href="gerarPdf.php">Baixar lista em PDF</a>
+
+                <button id="btnTema" class="btn-secundario" type="button">
+                     Tema claro
+                </button>
+                
             </nav>
         </section>
     </main>
 
     <script src="js/pesquisa.js"></script>
+    <script src="js/tema.js"></script>
 </body>
 </html>

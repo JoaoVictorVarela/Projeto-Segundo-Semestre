@@ -8,6 +8,13 @@
     --dourado: #d4af37;
     --texto: #fff;
     --texto-suave: #aaa;
+
+    /* Cores do tema claro */
+    --fundo-claro: #f5f5f5;
+    --painel-claro: #ffffff;
+    --texto-claro: #222;
+    --texto-suave-claro: #666;
+    --borda-clara: #ddd;
 }
 
 * {

@@ -8,17 +8,18 @@ if ($con->connect_error) {
 }
 
 if (empty($_SESSION['nome'])) {
-    header('Location: cadastro/login.php');
+    header('Location: cadastroLogin/login.php');
     exit;
 }
 
 if ($_SESSION['tipo_usuario'] == 'admin'){
     header('Location: index.php');
+    exit;
 }
 
 $resultado = $con->query(
     "SELECT id, nome, preco FROM pratos
-     WHERE ativo = 1 ORDER BY nome"
+     WHERE ativo = 1 ORDER BY id"
 );
 
 if (!$resultado) {
@@ -35,18 +36,32 @@ function h($valor) {
     );
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pedidos do Restaurante</title>
-    <link rel="stylesheet" href="css/fazerPedido.css">
+    <link rel="stylesheet" href="css/fazerPedido.css?v=2">
+    <link rel="stylesheet" href="css/tema.css?v=2">
 </head>
-<body>
+<body class="pagina-fazer-pedido">
 
 <div class="container">
-    <h1>🍽️ Faça seu pedido</h1>
+
+    <div class="topo-pagina">
+        <h1>🍽️ Faça seu pedido</h1>
+
+        <div class="botoes-header">
+            <a href="index.php" class="btn-home">HOME</a>
+
+            <button type="button" id="btnTema">
+                Tema claro
+            </button>
+        </div>
+    </div>
 
     <form action="salvar_pedido.php"
           method="POST"
@@ -98,6 +113,7 @@ function h($valor) {
 </div>
 
 <script src="js/fazerPedido.js"></script>
+<script src="js/tema.js"></script>
 
 </body>
 </html>

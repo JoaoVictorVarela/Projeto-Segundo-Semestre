@@ -33,7 +33,6 @@
 
         <input type="submit" value="Enviar">
 
-        <p>Tela Principal<a href="../index.php"> Clique aqui</a>
         <p>Login<a href="Login.php"> Clique aqui</a>
         <button id="btnTema" type="button" title="Mudar Tema">
             Tema

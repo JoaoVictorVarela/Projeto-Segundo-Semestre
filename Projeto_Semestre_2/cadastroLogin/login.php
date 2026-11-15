@@ -12,7 +12,7 @@
 <body>
     <a id="btn-home" href="../index.php" aria-label="Voltar para a página inicial">Home</a>
 
-    <div class= "login">
+    <div class="login">
         <h1>Tela de Login</h1>
 
         <a id="mensagem-geral-login"></a>

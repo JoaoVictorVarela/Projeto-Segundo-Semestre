@@ -16,7 +16,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.container {
+.container_cadastro{
     width: min(1050px, 100%);
     min-height: 620px;
     display: flex;
@@ -233,7 +233,7 @@ a:hover {
         padding: 20px 12px;
     }
 
-    .container {
+    .container_cadastro{
         flex-direction: column;
     }
 
