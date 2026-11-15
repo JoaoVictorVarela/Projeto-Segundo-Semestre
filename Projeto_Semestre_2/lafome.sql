@@ -113,7 +113,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `tipo_usuario`, `nome`, `data_nascimento`, `genero`, `nome_materno`, `email`, `cep`, `endereco`, `cpf`, `telefone_celular`, `telefone_fixo`, `senha`) VALUES
 (1, 'admin', 'usuario  Master', '1980-09-08', 'Masculino', 'Roberta da Silva', 'admin@gmail.com', '83065-340', 'Rua São Bento, Guatupê - São José dos Pinhais/PR', '373.246.140-86', '(+55)11-11111111', '(+55)11-11111111', '$2y$10$NbbhFI8O8dhUiAGmrLWDQusP1eNMz/jFpAbYexVGTEpX3xqf1b6wW'),
 (2, 'comum', 'Pedro Paulo da Silva', '1980-11-11', 'Masculino', 'Paula da Silva', 'pedro@gmail.com', '67010-577', 'Passagem Dez de Julho, Guanabara - Ananindeua/PA', '679.537.560-99', '(+55)11-11111111', '(+55)11-11111111', '$2y$10$PjTujKR.tVPSM/xe7CetGOIN31gIcS8QG30pWxF61MhNArrcQmgEK'),
-(3, 'comum', 'Robson da Silva', '1985-01-07', 'Masculino', 'Claudia da Silva', 'robson@gmail', '70704-050', 'Quadra SHN Quadra 4 Bloco E, Asa Norte - Brasília/DF', '948.713.340-23', '(+55)11-11111111', '(+55)11-11111111', '$2y$10$Oce5.OHD6CfxA5WxlsPLfO1kyat2gJfvewfLLt6FBjBA1LyaTCq16');
+(3, 'comum', 'Robson da Silva', '1985-01-07', 'Masculino', 'Claudia da Silva', 'robson@gmail.com', '70704-050', 'Quadra SHN Quadra 4 Bloco E, Asa Norte - Brasília/DF', '948.713.340-23', '(+55)11-11111111', '(+55)11-11111111', '$2y$10$Oce5.OHD6CfxA5WxlsPLfO1kyat2gJfvewfLLt6FBjBA1LyaTCq16');
 
 --
 -- Índices para tabelas despejadas

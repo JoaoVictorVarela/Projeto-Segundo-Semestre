@@ -89,6 +89,12 @@ $pendentes = count(array_filter(
 
 $entregues = count($pedidos) - $pendentes;
 ?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -96,17 +102,26 @@ $entregues = count($pedidos) - $pendentes;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gerenciamento de pedidos</title>
     <link rel="stylesheet" href="css/pedidos.css">
+    <link rel="stylesheet" href="css/tema.css">
+
 </head>
 <body>
 
-<div class="container">
+<div class="container_pedidos">
 
     <header>
-        <h1>📋 Gerenciamento de pedidos</h1>
+    <h1>📋 Gerenciamento de pedidos</h1>
+
+    <div class="botoes-header">
         <a class="novo-pedido" href="index.php">
             Home
         </a>
-    </header>
+
+        <button type="button" id="btnTema">
+            Tema claro
+        </button>
+    </div>
+</header>
 
     <div class="resumo">
         <div class="indicador">
@@ -235,4 +250,7 @@ $entregues = count($pedidos) - $pendentes;
 </div>
 
 </body>
+
+<script src="js/tema.js"></script>
+
 </html>

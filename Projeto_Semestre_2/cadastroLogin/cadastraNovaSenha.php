@@ -21,10 +21,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     if (mysqli_num_rows($resultado) < 1){
         echo '<h2>usuario não encontrado</h2>';
-        header('Location: esqueciSenha.php');
+        
         
     } 
-    else {
+    else if (mysqli_num_rows($resultado) > 1) {
         $usuario = $resultado->fetch_assoc(); 
 
         $email_sql = $usuario['email'];
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
         }else{
             echo '<h2>Dados estão incorretos</h2>';
-            header('Location: esqueciSenha.php');
+            
 
         }
 

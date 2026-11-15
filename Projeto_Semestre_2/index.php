@@ -13,7 +13,10 @@ session_start()
     rel="stylesheet">  
 
 <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/tema.css">
+<link rel="stylesheet" href="css/fonte.css">
 </head>  
+
 <body>  <!-- CABEÇALHO -->  
 
 <header>  
@@ -53,25 +56,44 @@ session_start()
         <?php if (isset($_SESSION['email'])): ?>
 
         <a href="sair.php"> Sair </a>
-
+        
         <?php endif; ?>
 
-       <?php
-       /*echo '<pre>';
-       print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
-       echo '</pre>';
-       */?>
         
        <?php 
-      if (isset($_SESSION['nome'])){
+     if (isset($_SESSION['nome'])){
           // explode transforma a frase em um array, e cada palavra é uma posição dele
           $nome = explode(' ', trim($_SESSION['nome'])); 
-          echo 'Olá ' . $nome[0];
-      }
-      ?>
+          echo "<a> Olá, $nome[0]</a>" ;
+          }
+          ?>
+          <?php
+          /*echo '<pre>';
+          print_r($_SESSION); // Expe a estrutura de todos os dados da sessão
+          echo '</pre>';
+          */?>
+
     </nav>  
 
+<div class="controles" aria-label="Controles de tamanho da fonte">
 
+    <button id="diminuir" type="button" title="Diminuir fonte">
+        A−
+    </button>
+
+    <button id="aumentar" type="button" title="Aumentar fonte">
+        A+
+    </button>
+
+    <button id="resetar" type="button" title="Restaurar fonte">
+        ↺
+    </button>
+    
+    
+    <button id="btnTema" type="button" title="Mudar Tema">
+    Tema
+    </button>
+</div>
 </header>  
 
 
@@ -80,10 +102,10 @@ session_start()
 <section class="hero" id="inicio">  
 
     <div class="hero-content">  
-
         <h1>  
             O sabor que fica na memória.  
         </h1>  
+
 
         <p>  
             Uma experiência gastronômica especial,  
@@ -642,7 +664,10 @@ session_start()
 
 <!-- JAVASCRIPT -->  
 
-<script src="js/index.js"></script>
 
 </body>  
+
+<script src="js/tema.js"></script>
+<script src="js/index.js"></script>
+<script src="js/fonte.js"></script>
 </html>

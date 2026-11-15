@@ -13,6 +13,8 @@ if (!empty($_GET['id'])){
         $sql_delete = "DELETE  FROM usuarios WHERE id=$id";
 
         $resultado_delete = $con ->query($sql_delete);
+        
+        header('Location: usuarios.php');
     }
 }
 
