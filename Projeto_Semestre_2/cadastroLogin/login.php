@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+$erro = $_SESSION['erro_login'] ?? '';
+unset($_SESSION['erro_login']);
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +24,10 @@ session_start();
 
         <a id="mensagem-geral-login"></a>
 
+        <?php if ($erro !== ''): ?>
+            <p id="mensagem-geral-login" class="mensagem-erro" role="alert"><?= htmlspecialchars((string) $erro, ENT_QUOTES, 'UTF-8') ?></p>
+        <?php endif; ?>
+
         <form action="testeLogin.php" method="post">
             <h2>Email</h2>
             <input name="email" id="loginEmail" type="email" placeholder="Digite seu email" required>
@@ -32,17 +39,6 @@ session_start();
             <button class="botao" type="reset">Limpar tela</button>
             <br>
             <button name="submit" class="botao" type="submit"> Logar</button>
-
-          <?php if (!empty($_SESSION['erro_login'])): ?>
-
-            <div style="color: red; margin-top: 10px; margin-left: 85px;">
-            <?php echo $_SESSION['erro_login']
-            ?>
-            </div>
-
-            
-
-         <?php endif; ?>
 
         </form>
 
