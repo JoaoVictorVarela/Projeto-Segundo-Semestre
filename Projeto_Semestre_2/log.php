@@ -1,166 +1,164 @@
 <?php
-// DADOS DEMONSTRATIVOS
-$logs = [
-    [
-        "nome" => "Carlos Oliveira",
-        "cpf" => "123.456.789-00",
-        "data" => "12/11/2026",
-        "hora" => "14:30:25",
-        "metodo" => "Nome materno"
-    ],
-    [
-        "nome" => "Mariana Santos",
-        "cpf" => "987.654.321-00",
-        "data" => "12/11/2026",
-        "hora" => "13:15:42",
-        "metodo" => "Data de nascimento"
-    ],
-    [
-        "nome" => "João Pereira",
-        "cpf" => "456.789.123-00",
-        "data" => "11/11/2026",
-        "hora" => "18:45:10",
-        "metodo" => "CEP"
-    ],
-    [
-        "nome" => "Ana Costa",
-        "cpf" => "321.654.987-00",
-        "data" => "10/11/2026",
-        "hora" => "09:20:33",
-        "metodo" => "Nome materno"
-    ]
-];
+session_start();
+date_default_timezone_set('America/Sao_Paulo');
+require_once __DIR__ . '/conexao.php';
 
-// FILTRO
-$busca = $_GET['busca'] ?? '';
-$filtro = $_GET['filtro'] ?? 'todos';
+// Somente usuários autenticados com perfil administrador podem consultar os logs.
+if (
+    empty($_SESSION['autenticado']) ||
+    !isset($_SESSION['tipo_usuario']) ||
+    $_SESSION['tipo_usuario'] !== 'admin'
+) {
+    header('Location: cadastroLogin/login.php');
+    exit();
+}
 
-$logsFiltrados = array_filter($logs, function($log) use ($busca, $filtro) {
-    if ($busca === '') {
-        return true;
-    }
+function h($valor): string
+{
+    return htmlspecialchars((string) $valor, ENT_QUOTES, 'UTF-8');
+}
 
+$busca = trim((string) ($_GET['busca'] ?? ''));
+$filtro = (string) ($_GET['filtro'] ?? 'todos');
+if (!in_array($filtro, ['todos', 'nome', 'cpf'], true)) {
+    $filtro = 'todos';
+}
+
+$sql = "SELECT nome_usuario, cpf_usuario, data_hora, metodo_2fa
+        FROM logs_acesso";
+$parametros = [];
+$tipos = '';
+
+if ($busca !== '') {
     if ($filtro === 'nome') {
-        return stripos($log['nome'], $busca) !== false;
+        $sql .= " WHERE nome_usuario LIKE ?";
+        $parametros[] = '%' . $busca . '%';
+        $tipos .= 's';
+    } elseif ($filtro === 'cpf') {
+        $sql .= " WHERE cpf_usuario LIKE ?";
+        $parametros[] = '%' . $busca . '%';
+        $tipos .= 's';
+    } else {
+        $sql .= " WHERE nome_usuario LIKE ? OR cpf_usuario LIKE ?";
+        $parametros[] = '%' . $busca . '%';
+        $parametros[] = '%' . $busca . '%';
+        $tipos .= 'ss';
     }
+}
 
-    if ($filtro === 'cpf') {
-        return stripos($log['cpf'], $busca) !== false;
-    }
+$sql .= " ORDER BY data_hora DESC";
 
-    return stripos($log['nome'], $busca) !== false ||
-           stripos($log['cpf'], $busca) !== false;
-});
+$stmt = $con->prepare($sql);
+if (!$stmt) {
+    http_response_code(500);
+    exit('Não foi possível consultar os logs. Verifique se a tabela logs_acesso foi criada no banco de dados.');
+}
 
-// MAIS RECENTES PRIMEIRO
-usort($logsFiltrados, function($a, $b) {
-    $dataA = DateTime::createFromFormat(
-        'd/m/Y H:i:s', $a['data'] . ' ' . $a['hora']
-    );
-    $dataB = DateTime::createFromFormat(
-        'd/m/Y H:i:s', $b['data'] . ' ' . $b['hora']
-    );
+if ($parametros) {
+    $stmt->bind_param($tipos, ...$parametros);
+}
 
-    return $dataB <=> $dataA;
-});
+$stmt->execute();
+$resultado = $stmt->get_result();
+$quantidade = $resultado ? $resultado->num_rows : 0;
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logs de Autenticação</title>
-
-<link rel='stylesheet' href='css/log.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs de autenticação | La Fome</title>
+    <link rel="stylesheet" href="css/log.css">
+    <link rel="stylesheet" href="css/tema.css">
 </head>
-
 <body>
+    <header class="cabecalho">
+        <a class="logo" href="index.php">La Fome</a>
+        <div class="usuario-logado">
+            <span>Administrador: <?= h($_SESSION['nome'] ?? 'Master') ?></span>
+            <a href="sair.php">Sair</a>
+        </div>
+    </header>
 
-<header>
-    <h2>Meu Sistema</h2>
-    <span>Usuário: Master</span>
-</header>
-
-<div class="container">
-
-    <div class="titulo">
-        <h1>Logs de Autenticação</h1>
-        <p>Consulte o histórico de acessos dos usuários.</p>
-    </div>
-
-    <div class="painel">
-
-        <form method="GET" class="pesquisa">
-            <select name="filtro">
-                <option value="todos"
-                    <?= $filtro === 'todos' ? 'selected' : '' ?>>
-                    Todos
-                </option>
-
-                <option value="nome"
-                    <?= $filtro === 'nome' ? 'selected' : '' ?>>
-                    Nome
-                </option>
-
-                <option value="cpf"
-                    <?= $filtro === 'cpf' ? 'selected' : '' ?>>
-                    CPF
-                </option>
-            </select>
-
-            <input
-                type="text"
-                name="busca"
-                placeholder="Digite o nome ou CPF..."
-                value="<?= htmlspecialchars($busca) ?>"
-            >
-
-            <button type="submit">Pesquisar</button>
-        </form>
-
-        <div class="resultado">
-            Registros encontrados: <?= count($logsFiltrados) ?>
+    <main class="container">
+        <div class="titulo-pagina">
+            <span class="sobretitulo">ÁREA ADMINISTRATIVA</span>
+            <h1>Logs de autenticação</h1>
+            <p>Consulte o histórico de autenticações concluídas no sistema.</p>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Usuário</th>
-                    <th>CPF</th>
-                    <th>Data</th>
-                    <th>Horário</th>
-                    <th>Método 2FA</th>
-                </tr>
-            </thead>
+        <section class="painel">
+            <form method="GET" class="pesquisa">
+                <label class="campo-filtro">
+                    <span>Pesquisar por</span>
+                    <select name="filtro">
+                        <option value="todos" <?= $filtro === 'todos' ? 'selected' : '' ?>>Todos</option>
+                        <option value="nome" <?= $filtro === 'nome' ? 'selected' : '' ?>>Nome</option>
+                        <option value="cpf" <?= $filtro === 'cpf' ? 'selected' : '' ?>>CPF</option>
+                    </select>
+                </label>
 
-            <tbody>
-            <?php if (count($logsFiltrados) > 0): ?>
-                <?php foreach ($logsFiltrados as $log): ?>
-                <tr>
-                    <td><?= htmlspecialchars($log['nome']) ?></td>
-                    <td><?= htmlspecialchars($log['cpf']) ?></td>
-                    <td><?= htmlspecialchars($log['data']) ?></td>
-                    <td><?= htmlspecialchars($log['hora']) ?></td>
-                    <td>
-                        <span class="metodo">
-                            <?= htmlspecialchars($log['metodo']) ?>
-                        </span>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="5" class="vazio">
-                        Nenhum registro encontrado.
-                    </td>
-                </tr>
-            <?php endif; ?>
-            </tbody>
-        </table>
+                <label class="campo-busca">
+                    <span>Busca</span>
+                    <input
+                        type="search"
+                        name="busca"
+                        placeholder="Digite o nome ou CPF..."
+                        value="<?= h($busca) ?>"
+                    >
+                </label>
 
-    </div>
-</div>
+                <button type="submit" class="btn-pesquisar">Pesquisar</button>
+                <a class="btn-limpar" href="log.php">Limpar</a>
+            </form>
 
+            <div class="resumo">
+                <span>Registros encontrados</span>
+                <strong><?= (int) $quantidade ?></strong>
+            </div>
+
+            <div class="tabela-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome do usuário</th>
+                            <th>CPF</th>
+                            <th>Data</th>
+                            <th>Horário</th>
+                            <th>Segundo fator (2FA)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php if ($quantidade > 0): ?>
+                        <?php while ($log = $resultado->fetch_assoc()): ?>
+                            <tr>
+                                <td data-label="Nome"><?= h($log['nome_usuario']) ?></td>
+                                <td data-label="CPF"><?= h($log['cpf_usuario']) ?></td>
+                                <td data-label="Data"><?= date('d/m/Y', strtotime($log['data_hora'])) ?></td>
+                                <td data-label="Horário"><?= date('H:i:s', strtotime($log['data_hora'])) ?></td>
+                                <td data-label="Segundo fator">
+                                    <span class="metodo"><?= h($log['metodo_2fa']) ?></span>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="5" class="vazio">
+                                Nenhum registro de autenticação encontrado.
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="acoes">
+                <a href="index.php" class="btn-voltar">Voltar para a página inicial</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
+<?php
+$stmt->close();
+?>

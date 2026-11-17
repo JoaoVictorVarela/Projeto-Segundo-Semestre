@@ -191,3 +191,21 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+-- Logs de autenticação concluída (após sucesso no 2FA)
+-- --------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `logs_acesso` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario_id` int(11) DEFAULT NULL,
+  `nome_usuario` varchar(80) NOT NULL,
+  `cpf_usuario` varchar(20) NOT NULL,
+  `data_hora` datetime NOT NULL DEFAULT current_timestamp(),
+  `metodo_2fa` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_logs_data_hora` (`data_hora`),
+  KEY `idx_logs_nome` (`nome_usuario`),
+  KEY `idx_logs_cpf` (`cpf_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

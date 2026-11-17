@@ -53,6 +53,8 @@ session_start();
 
         <a class="login-btn" href="pedidos.php">Pedidos</a>
 
+        <a class="login-btn" href="log.php">Logs de acesso</a>
+
         <?php endif; ?>
 
         <?php if (isset($_SESSION['email'])): ?>

@@ -54,7 +54,7 @@ if (!isset($con) || $con->connect_error) {
 }
 
 $idUsuario = (int) $_SESSION['pending_user_id'];
-$stmt = $con->prepare('SELECT id, nome, email, tipo_usuario, nome_materno, data_nascimento, cep FROM usuarios WHERE id = ? LIMIT 1');
+$stmt = $con->prepare('SELECT id, nome, cpf, email, tipo_usuario, nome_materno, data_nascimento, cep FROM usuarios WHERE id = ? LIMIT 1');
 
 if (!$stmt) {
     voltarAoLogin('Não foi possível concluir a verificação. Faça login novamente.');
@@ -113,6 +113,35 @@ $_SESSION['id_usuario'] = (int) $usuario['id'];
 $_SESSION['email'] = $usuario['email'];
 $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
 $_SESSION['nome'] = $usuario['nome'];
+
+// Registra somente autenticações que concluíram corretamente o 2FA.
+$con->query("SET time_zone = '-03:00'");
+$metodos2fa = [
+    'nome_materno' => 'Nome materno',
+    'data_nascimento' => 'Data de nascimento',
+    'cep' => 'CEP',
+];
+$metodoUtilizado = $metodos2fa[$chavePergunta] ?? 'Não identificado';
+
+$logStmt = $con->prepare(
+    'INSERT INTO logs_acesso (usuario_id, nome_usuario, cpf_usuario, metodo_2fa)
+     VALUES (?, ?, ?, ?)'
+);
+
+if ($logStmt) {
+    $cpfUsuario = (string) ($usuario['cpf'] ?? '');
+    $nomeUsuario = (string) $usuario['nome'];
+    $logStmt->bind_param(
+        'isss',
+        $idUsuario,
+        $nomeUsuario,
+        $cpfUsuario,
+        $metodoUtilizado
+    );
+    $logStmt->execute();
+    $logStmt->close();
+}
+
 limparEtapaPendente();
 
 header('Location: ../index.php');
