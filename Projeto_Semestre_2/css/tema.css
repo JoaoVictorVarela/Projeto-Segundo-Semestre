@@ -526,3 +526,13 @@ body.pagina-fazer-pedido.tema-claro #formPedido button[type="submit"] {
 body.pagina-fazer-pedido.tema-claro #formPedido button[type="submit"]:hover {
     background: #106638;
 }
+
+/* Pagina de log */
+
+body.tema-claro .titulo-pagina-log h1 {
+    color: #292929;
+}
+
+body.tema-claro .usuario-logado-log span {
+    color: #292929;
+}

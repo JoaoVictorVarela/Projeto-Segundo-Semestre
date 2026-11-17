@@ -74,14 +74,14 @@ $quantidade = $resultado ? $resultado->num_rows : 0;
 <body>
     <header class="cabecalho">
         <a class="logo" href="index.php">La Fome</a>
-        <div class="usuario-logado">
+        <div class="usuario-logado-log">
             <span>Administrador: <?= h($_SESSION['nome'] ?? 'Master') ?></span>
             <a href="sair.php">Sair</a>
         </div>
     </header>
 
     <main class="container">
-        <div class="titulo-pagina">
+        <div class="titulo-pagina-log">
             <span class="sobretitulo">ÁREA ADMINISTRATIVA</span>
             <h1>Logs de autenticação</h1>
             <p>Consulte o histórico de autenticações concluídas no sistema.</p>
@@ -154,10 +154,15 @@ $quantidade = $resultado ? $resultado->num_rows : 0;
 
             <div class="acoes">
                 <a href="index.php" class="btn-voltar">Voltar para a página inicial</a>
+                <button id="btnTema" class="btn-secundario" type="button">
+                     Tema claro
+                </button>
             </div>
         </section>
     </main>
 </body>
+
+<script src="js/tema.js"></script>
 </html>
 <?php
 $stmt->close();
