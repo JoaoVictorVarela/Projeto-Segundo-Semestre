@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$erro = $_SESSION['erro_login'] ?? '';
+unset($_SESSION['erro_login']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,6 +24,10 @@
 
         <a id="mensagem-geral-login"></a>
 
+        <?php if ($erro !== ''): ?>
+            <p id="mensagem-geral-login" class="mensagem-erro" role="alert"><?= htmlspecialchars((string) $erro, ENT_QUOTES, 'UTF-8') ?></p>
+        <?php endif; ?>
+
         <form action="testeLogin.php" method="post">
             <h2>Email</h2>
             <input name="email" id="loginEmail" type="email" placeholder="Digite seu email" required>
@@ -28,6 +39,7 @@
             <button class="botao" type="reset">Limpar tela</button>
             <br>
             <button name="submit" class="botao" type="submit"> Logar</button>
+
         </form>
 
         <p>Não possui login? <a href="cadastro.php">Clique aqui</a>

@@ -82,7 +82,10 @@ INSERT INTO `pratos` (`id`, `nome`, `preco`, `ativo`) VALUES
 (4, 'Hambúrguer Artesanal', 35.00, 1),
 (5, 'Massa Especial', 25.00, 1),
 (6, 'Pizza da Casa', 44.90, 1),
-(7, 'Refrigerante', 6.00, 1);
+(7, 'Coca 2L', 10.00, 1);
+(8, 'Pepsi 2L', 10.00, 1);
+(9, 'Fanta 2L', 10.00, 1);
+(10, 'Coca Lata', 8.00, 1);
 
 -- --------------------------------------------------------
 
