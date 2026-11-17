@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -28,6 +32,18 @@
             <button class="botao" type="reset">Limpar tela</button>
             <br>
             <button name="submit" class="botao" type="submit"> Logar</button>
+
+          <?php if (!empty($_SESSION['erro_login'])): ?>
+
+            <div style="color: red; margin-top: 10px; margin-left: 85px;">
+            <?php echo $_SESSION['erro_login']
+            ?>
+            </div>
+
+            
+
+         <?php endif; ?>
+
         </form>
 
         <p>Não possui login? <a href="cadastro.php">Clique aqui</a>

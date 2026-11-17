@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION['erro_login'] = '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
