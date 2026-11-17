@@ -35,12 +35,12 @@ function aplicarTema(tema) {
 
     if (tema === "claro") {
 
-        botaoTema.textContent = "Tema escuro";
+        botaoTema.textContent = "Tema claro";
         botaoTema.title = "Ativar tema escuro";
 
     } else {
 
-        botaoTema.textContent = "Tema claro";
+        botaoTema.textContent = "Tema escuro";
         botaoTema.title = "Ativar tema claro";
 
     }

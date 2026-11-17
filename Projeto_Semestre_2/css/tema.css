@@ -204,6 +204,8 @@ body.tema-claro .vazio h2 {
     color: #222;
 }
 
+/* INDEX */
+
 /* CABEÇALHO */
 
 body.tema-claro header {
@@ -298,6 +300,15 @@ body.tema-claro footer p {
     background: #d4af37;
     color: #111;
 }
+
+body.tema-claro .reserva h2{
+    color: white;
+}
+
+body.tema-claro .hero-content h1{
+    color: white;
+}
+
 
 
 
