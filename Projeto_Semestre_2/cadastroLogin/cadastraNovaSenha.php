@@ -1,5 +1,14 @@
 <?php
+session_start();
 include_once('../conexao.php');
+
+function voltarAoLogin(string $mensagem): void
+{
+    unset($_SESSION['email'], $_SESSION['tipo_usuario'], $_SESSION['id_usuario'], $_SESSION['autenticado']);
+    $_SESSION['erro_login'] = $mensagem;
+    header('Location: esqueciSenha.php');
+    exit();
+}
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
      
@@ -21,10 +30,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     if (mysqli_num_rows($resultado) < 1){
         echo '<h2>usuario não encontrado</h2>';
-        
+        voltarAoLogin('Email não encontrado');
         
     } 
-    else if (mysqli_num_rows($resultado) > 1) {
+    else {
         $usuario = $resultado->fetch_assoc(); 
 
         $email_sql = $usuario['email'];
@@ -46,6 +55,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
         }else{
             echo '<h2>Dados estão incorretos</h2>';
+            voltarAoLogin('Dados Incorretos');
+
             
 
         }
